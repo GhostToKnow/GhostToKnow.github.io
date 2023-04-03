@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/04/03/php代码审计/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,16 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>GhostToKnow</title>
-  <meta name="keywords" content="">
+  <title>PHP代码审计 - GhostToKnow</title>
+  <meta name="keywords" content="PHP代码审计,null">
   <meta desc name="description" content="GhostToKnow - GhostToKnow - GhostToKnow">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="GhostToKnow">
-<meta property="og:url" content="http://example.com/index.html">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP代码审计">
+<meta property="og:url" content="http://example.com/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.html">
 <meta property="og:site_name" content="GhostToKnow">
+<meta property="og:description" content="前言官方文档：php.netphp官方文档是非常详情，好用的，在遇到不清楚作用的函数时可以进行查询 白盒测试做代码审计最主要的知识是要去了解一个漏洞应该有哪些防御方式，因为大部分的漏洞都是因为修复没有做的全面，或者修复没有考虑到一些情况导致漏洞。MVC：C：分发处理请求网站的逻辑M：处理和数据库相关的操作V：显示给用户的内容 代码审计流程正向查找流程a. 从入口点函数出发（如index.php）b">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-04-03T12:25:51.000Z">
+<meta property="article:modified_time" content="2023-04-03T13:21:12.906Z">
 <meta property="article:author" content="GhostToKnow">
+<meta property="article:tag" content="PHP代码审计">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2281,7 +2286,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  search' style="display: ;">
+      <div id="half" class='cover-wrapper post search' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s3.bmp.ovh/imgs/2023/03/21/d0386839ac406584.jpg#封面背景，需要上传url"></div>
 
@@ -2326,7 +2331,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2336,115 +2341,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/volatility取证/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/04/03/volatility%E5%8F%96%E8%AF%81/">
-        <img itemprop="image" class='headimg' alt="volatility取证" src='https://s2.loli.net/2023/04/03/veBpX9l2H8Ozfsx.jpg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/03/volatility%E5%8F%96%E8%AF%81/"  itemprop="url">
-        volatility取证
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言volatility是一款开源的内存取证分析工具，由python编写，支持各种操作系统，能够对导出的windows,linux,mac osx,android等系统内存镜像进行分析。可以通过插件来拓展功能。
-常见命令命令格式：
-volatility -f [镜像文件] –profile&#x3D;[操作系统] [插件参数]
-12345678910111213141516171819202...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T14:42:48+01:00">2023-04-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%8F%96%E8%AF%81/">取证</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%8F%96%E8%AF%81/" itemprop="url"><span itemprop="name">取证</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/03/volatility%E5%8F%96%E8%AF%81/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/PHP代码审计/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="GhostToKnow">
@@ -2454,667 +2351,425 @@ volatility -f [镜像文件] –profile&#x3D;[操作系统] [插件参数]
     <meta itemprop="description" content="">
   </span>
   
-  
+
+
   
     <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">
-        <img itemprop="image" class='headimg' alt="PHP代码审计" src='https://s2.loli.net/2023/04/03/KgnRqY23MB1V8ZN.jpg'/>
+      <a class='headimg-a'>
+        <img itemprop="image" class='headimg' src='https://s2.loli.net/2023/04/03/KgnRqY23MB1V8ZN.jpg'/>
       </a>
     </div>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         PHP代码审计
-      </a>
-    </h2>
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png" class="lazyload" data-srcset="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">GhostToKnow</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/PHP/">PHP</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/PHP/" itemprop="url"><span itemprop="name">PHP</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-03T13:25:51+01:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 3, 2023</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>5.4k words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>19 min</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>官方文档：php.net<br>php官方文档是非常详情，好用的，在遇到不清楚作用的函数时可以进行查询</p>
+<p>白盒测试做代码审计最主要的知识是要去了解一个漏洞应该有哪些防御方式，因为大部分的漏洞都是因为修复没有做的全面，或者修复没有考虑到一些情况导致漏洞。<br>MVC：<br>C：分发处理请求网站的逻辑<br>M：处理和数据库相关的操作<br>V：显示给用户的内容</p>
+<h2 id="代码审计流程"><a href="#代码审计流程" class="headerlink" title="代码审计流程"></a>代码审计流程</h2><h3 id="正向查找流程"><a href="#正向查找流程" class="headerlink" title="正向查找流程"></a>正向查找流程</h3><p>a. 从入口点函数出发（如index.php）<br>b. 找到控制器，理解URL派发规则（URL具体映射到哪个具体的代码里）<br>c. 跟踪控制器调用，以理解代码为目标进行源代码阅读<br>d. 最终在阅读代码的过程和尝试中，可能发现漏洞</p>
+<p>本质：程序员疏忽或逻辑问题导致漏洞 </p>
+<p>特点：</p>
+<ol>
+<li>复杂：需要极其了解目标源码的功能与框架</li>
+<li>跳跃性大：涉及M&#x2F;V&#x2F;C&#x2F;Service&#x2F;Dao等多个层面</li>
+<li>漏洞的组合：通常是多个漏洞的组合，很可能存在逻辑相关的漏洞</li>
+</ol>
+<h3 id="反向查找流程"><a href="#反向查找流程" class="headerlink" title="反向查找流程"></a>反向查找流程</h3><p>a. 通过危险函数，回溯可能存在的漏洞<br>     1. 查找可控变量<br>     2. 传递的过程中触发漏洞</p>
+<p>特点：</p>
+<ol>
+<li>与上下文无关</li>
+<li>危险函数，调用即漏洞</li>
+</ol>
+<p>代码审计工具功能大多就是这个原理</p>
+<h3 id="双向查找流程（手动审计主要方式）"><a href="#双向查找流程（手动审计主要方式）" class="headerlink" title="双向查找流程（手动审计主要方式）"></a>双向查找流程（手动审计主要方式）</h3><ol>
+<li>略读代码，了解框架（正向流程，如：网站都有哪些功能，什么样的架构如mvc：它的m在哪v,c在哪，用了什么模板引擎，是否用了orm（如果使用了ORM那么sql注入就很少了，如果没用是手工写的sql语句，可以关注是否存在sql漏洞）等…)</li>
+<li>是否有全局过滤机制<ol>
+<li>有：是否可以绕过<ol>
+<li>可以：寻找漏洞触发点（反向查找流程，找危险函数）</li>
+<li>不可以：寻找没有过滤的变量</li>
+</ol>
+</li>
+<li>没有：那么就看它具体是如何处理的,具体代码具体分析<ol>
+<li>有处理：寻找遗漏的处理点（如忘记处理的地方或者处理不太正确的地方）</li>
+<li>完全没有处理：可以挖成筛子（很少）</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>3.找到了漏洞点，漏洞利用是否有坑</p>
+<p>根源：理解程序执行过程，找寻危险逻辑<br>特点：<br>    高效：如挖隧道，双向开工，时间减半（不需要去完全理解网站内部原理和函数作用)<br>    知识面广：需要同时掌握正向，反向挖掘技巧，并进行结合<br>    以及所有正向，反向的优点</p>
+<h2 id="SQL注入漏洞挖掘技巧"><a href="#SQL注入漏洞挖掘技巧" class="headerlink" title="SQL注入漏洞挖掘技巧"></a>SQL注入漏洞挖掘技巧</h2><p>PHP+mysql链接方式有：<br>mysql（废弃，但老的仍然有）<br>mysqli<br>PDO</p>
+<h3 id="sql注入常见过滤方法"><a href="#sql注入常见过滤方法" class="headerlink" title="sql注入常见过滤方法"></a>sql注入常见过滤方法</h3><p><strong>intval：</strong>							把用户输入的数字后面的所有不是数字的都过滤掉<br><strong>addslashes：</strong>				  把 ‘ 前加\转义掉<br><strong>mysql_real_escape：</strong>	和第二个类似，但会考虑用户输入和mysql的编码，避免像宽字节注入问题</p>
+<p><strong>mysqli_escape_string</strong> &#x2F; <strong>mysqli_real_escape_string</strong> &#x2F; <strong>mysqli::escape_string</strong>  （和mysqli搭配使用，和前面的功能类似）和他们的差别是会主动加引号包裹</p>
+<p><strong>PDO:</strong>	quote</p>
+<p><strong>参数化查询</strong></p>
+<h3 id="常见注入过滤绕过方法"><a href="#常见注入过滤绕过方法" class="headerlink" title="常见注入过滤绕过方法"></a>常见注入过滤绕过方法</h3><p>intval：不知道<br>addslashes  &#x2F;  mysql_real_escape<br>    1.宽字节注入<br>    2.数字型sql语句<br>    3.寻找字符串转换函数（传入编码好的字符绕过过滤，在后面被转换成sql语句）<br>        urldecode<br>        base64_decode<br>        iconv<br>        json_decode<br>        stripshasles<br>        simple_xml_loadstring<br>例如：传入id被过滤但后面有一处代码是解码base64，所以我们可以传入 ‘ 的base64编码绕过</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$id</span> = <span class="title function_ invoke__">addslashes</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>]);</span><br><span class="line">....</span><br><span class="line"><span class="variable">$id</span> = <span class="title function_ invoke__">base64_decode</span>(<span class="variable">$id</span>);</span><br><span class="line">....</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;select * from flag where id = &#x27;<span class="subst">$id</span>&#x27;&quot;</span>;   </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>mysqli::escape_string  &#x2F;&#x2F;  PDO::quote<br>    1.宽字节注入<br>参数化查询<br>    1.寻找非sql值的位置</p>
+<h3 id="开发者容易遗漏得输入点"><a href="#开发者容易遗漏得输入点" class="headerlink" title="开发者容易遗漏得输入点"></a>开发者容易遗漏得输入点</h3><ol>
+<li><p>HTTP头</p>
+<p>a. X-Forwarded-For</p>
+<p>b. User-Agent</p>
+<p>c. Referer</p>
+</li>
+<li><p>PHP_SELF（访问的页面url名，但用户可控）</p>
+</li>
+<li><p>REQUEST_URI（用户请求得完整路径）</p>
+</li>
+<li><p>文件名 $_FILES[][name]</p>
+</li>
+<li><p>php:&#x2F;&#x2F;input   (post穿进去得内容)</p>
+</li>
+</ol>
+<p>引入单引号(转义符)的方法（’号被过滤，看后面有没有可以引入的地方）<br>    stripslashes<br>    base64_decode<br>    urldecode<br>    substr<br>    iconv<br>    str_replace(‘0’,’’,$sql)<br>    xml<br>    json_encode</p>
+<h2 id="任意文件操作"><a href="#任意文件操作" class="headerlink" title="任意文件操作"></a>任意文件操作</h2><p>PHP上传的文件会被保存在$_FILES下</p>
+<p>PHP文件操作函数汇总</p>
+<ol>
+<li>文件包含<ol>
+<li>include &#x2F; require &#x2F; include_once &#x2F; require_once &#x2F; spl_autoload</li>
+</ol>
+</li>
+<li>文件读取<ol>
+<li>file_get_contents &#x2F; fread &#x2F; readfile &#x2F; file &#x2F; highlight_file &#x2F; show_source</li>
+</ol>
+</li>
+<li>文件写入<ol>
+<li>file_put_contents &#x2F; fwrite &#x2F; mkdir &#x2F; fputs</li>
+</ol>
+</li>
+<li>文件删除<ol>
+<li>unlink &#x2F; rmdir</li>
+</ol>
+</li>
+<li>文件上传<ol>
+<li>move_uploaded_file &#x2F; copy &#x2F; rename</li>
+</ol>
+</li>
+</ol>
+<h3 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h3><p>文件上传流程：</p>
+<ol>
+<li><p>检查文件大小，后缀，类型</p>
+</li>
+<li><p>检查文件内容（如文件头，尾等）</p>
+</li>
+<li><p>提取文件后缀</p>
+</li>
+<li><p>生成新文件名</p>
+</li>
+<li><p>将上传临时文件拷贝到新文件名位置</p>
+</li>
+</ol>
+<p>文件上传逻辑常见错误</p>
+<ol>
+<li>只检查文件类型不检查文件后缀</li>
+<li>文件后缀黑名单有遗漏</li>
+<li>使用原始文件名，导致\0截断（一般没有了）</li>
+<li>前端检验</li>
+</ol>
+<h3 id="文件包含漏洞"><a href="#文件包含漏洞" class="headerlink" title="文件包含漏洞"></a>文件包含漏洞</h3><p>首先明确一点，文件包含漏洞不等于文件读取漏洞</p>
+<p>危害：文件读取  &#x2F;  代码执行<br>常见位置：模板文件名（切换模板）<br>                    语言文件名（切换语言）<br>常见利用：<br>    要寻找可被包含利用的文件：上传文件，临时文件，Session文件，日志文件<br>    后缀无法控制的情况：\0截断，协议利用<br>    PHP5.3.4+ 对包含\0的文件操作函数进行了限制，基本上没有了</p>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>Metinfo 5.3.10版本Getshell漏洞<br>可控制的部分：include $file . ‘.php’;<br>http协议利用：<a target="_blank" rel="noopener" href="http://xxxx.com/1.php">http://xxxx.com/1.php</a> (远程文件包含，一般不开设置不能用)<br>PHP协议利用：zip&#x2F;phar<br>    制作2.php的压缩包 -&gt; 2.zip -&gt; 改后缀为 -&gt; 2.jpg<br>    在服务器中上传2.jpg文件<br>    再利用：zip:&#x2F;&#x2F;var&#x2F;www&#x2F;upload&#x2F;head&#x2F;2.jpg#2.php （#意思是访问zip内部的子文件-&gt;2.php）</p>
+<h3 id="文件删除漏洞"><a href="#文件删除漏洞" class="headerlink" title="文件删除漏洞"></a>文件删除漏洞</h3><p>危害：<br>    删除服务器任意文件，DOS服务器<br>    删除安装锁文件，导致目标环境可被重新安装<br>    重新安装  -》任意重置管理员密码</p>
+<h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h4><p>上传新头像会把老头像自动删除，但可以把删除老图像的地址换成别的造成任意文件删除</p>
+<h2 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h2><p>命令执行指的是执行系统命令 （ls）<br><a target="_blank" rel="noopener" href="https://explainshell.com/%E5%8F%AF%E4%BB%A5%E5%9C%A8%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E6%9F%A5%E8%AF%A2%E5%A4%8D%E6%9D%82%E5%91%BD%E4%BB%A4%E7%9A%84%E6%84%8F%E6%80%9D">https://explainshell.com/可以在这个网站查询复杂命令的意思</a><br>代码执行指的是PHP的代码执行<br>本质：用户输入无过滤，拼接到了系统命令中<br>PHP命令执行函数：</p>
+<ol>
+<li>system</li>
+<li>passthru</li>
+<li>exec</li>
+<li>shell_exec</li>
+<li>popen  (常见的就是上面这5种)</li>
+<li>proc_open</li>
+<li>pcntl_exec</li>
+<li>dl</li>
+</ol>
+<p>要像命令执行很难，要先学会如何正确防御命令注入，才能分辨出哪些没有正确处理</p>
+<p>防御PHP命令注入漏洞：<br>PHP中只能使用escapeshellcmd和escapeshellatg进行命令参数的过滤</p>
+<ol>
+<li>先区分这2个函数：</li>
+</ol>
+<p>​		<strong>escapeshellcmd</strong><br>​		<strong>escapeshellatg</strong><br>​				escapeshellatg没问题但escapeshellatg是只能限制逃逸不出单引号’但有些命令的不常用参数是可以任意命令执行 </p>
+<ol start="2">
+<li>要把用户的输入放在值里</li>
+</ol>
+<p>​	如果把输入直接是键值对可能会造成漏洞</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#123;$query&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有一些命令的不常用参数可能会导致一些意外发生。直接使用 | 等命令跳出前面的命令实现命令执行<br>​	修复：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep -i &#123;$query&#125;</span><br><span class="line">grep -- &#123;$query&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="XML实体注入漏洞"><a href="#XML实体注入漏洞" class="headerlink" title="XML实体注入漏洞"></a>XML实体注入漏洞</h2><p>PHP XML解析函数<br>    simplexml_load_file<br>    simplexml_load_string<br>    SimpleXMLElement<br>    DOMDocument<br>    xml_parse<br>如果发现有这几个函数的地方，基本上可以确定百分之80有xml实体注入 </p>
+<p>libxml_disable_entity_loader(true)来禁用掉外部实体的加载，就不存在xml实体注入</p>
+<p>PHP中XXE漏洞逐渐减少，到现在的版本里几乎已经绝迹了，因为PHP XML操作依赖libxml库<br>但在libxml2.9.0+默认是关闭了xml外部实体解析开关的，可以顺势挖一下也比较简单</p>
+<p>方法：暴力搜索就行，查看有没有xml解析函数，再看禁没禁止外部加载</p>
+<p>无输出点的xxe漏洞：有时候可能存在xxe漏洞但并不会在页面中显示，要利用到blind-xxe<br>Blind XXE原理：<br>    利用XML外部实体功能读取文件<br>    利用XML外部实体功能发送HTTP请求<br>    利用HTTP协议传递文件内容</p>
+<h2 id="前端漏洞"><a href="#前端漏洞" class="headerlink" title="前端漏洞"></a>前端漏洞</h2><p>建议代码审计不去主要找这种漏洞，进行黑盒测试就能挖到的漏洞，在代码审计过程中没必要太注重</p>
+<p>百盒测试中可以关注前端漏洞类型：<br>    XSS漏洞<br>    CSRF漏洞<br>    Jsonp劫持漏洞（前面三个关注多）<br>    URL跳转漏洞（不多）<br>    点击劫持漏洞（不多）</p>
+<h3 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h3><p>在白盒测试中寻找XSS漏洞：<br>常见防护方法：<br>    htmlspecialchars()把用户输入转义成html实体字符（这时候是绝对没有xss的）<br>    strip_tags()	从字符中去除HTML和PHP标记</p>
+<p>自动化FUZZ -》寻找输出函数（危险函数）<br>富文本XSS挖掘<br>    什么是富文本：本质就是html，网站给你一个有很多功能的输入框</p>
+<p><img src="https://s2.loli.net/2023/04/03/34PUvMOlk9tW1bN.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/34PUvMOlk9tW1bN.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230403203304212"><br>为什么出现富文本xss：<br>    前面2种防护方法要么就是转义掉要么就是直接去除掉，但在一些写文章，或者发帖的需要提交html富文本，如果使用前面的方法那么提交的就不是富文本了，会影响业务。<br>常见富文本过滤方法：<br>    会使用富文本的xss过滤器：把用户输入的恶意标签，属性去掉<br>    黑名单（很难过滤掉该过滤的标签属性)<br>    白名单</p>
+<h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p>在白盒测试中寻找CSRF漏洞：<br>    检查Referer（来自于当前域名，可信域名，才会执行）<br>    （可以看正则匹配全面吗，比如正则匹配xxx.nte后缀的域名，那么可以注册个cxxx.nte域名绕过）<br>    检查Token<br>    （寻找跨域漏洞，要去跨域请求某一个网站内容的时候需要先去请求这个网站有没有crossdomain.xml，<br>    要根据这里面配置的信息来认证是否允许用户去发送一个跨站的请求）<br>        Flash<br>        Jsonp<br>        CORS   黑盒测试就可以找到这三个</p>
+<h3 id="Jsonp劫持漏洞"><a href="#Jsonp劫持漏洞" class="headerlink" title="Jsonp劫持漏洞"></a>Jsonp劫持漏洞</h3><p>在白盒测试中寻找Jsonp劫持漏洞：<br>Jsonp介绍：Jsonp是 json 的一种”使用模式”   可以让网页从别的域名（网站）那获取资料，即跨域读取数据；<br>它利用的是script标签的 src 属性不受同源策略影响的特性，使网页可以得到从其他来源动态产生的 json 数据，因此可以用来实现跨域读取数据。<br>更通俗的说法：JSONP 就是利用 <script> 标签的跨域能力实现跨域数据的访问，请求动态生成的 JavaScript 脚本同时带一个 callback 函数名作为参数。服务端收到请求后，动态生成脚本产生数据，并在代码中以产生的数据为参数调用 callback 函数。  </p>
+<p>原理：当网站通过 JSONP 方式传递用户敏感信息时，攻击者可以伪造 JSONP 调用页面，诱导被攻击者访问来	达到窃取用户信息的目的；jsonp 数据劫持就是攻击者获取了本应该传给网站其他接口的数据。<br> 和 CSRF 类似，都需要用户交互，而 CSRF 主要是以用户的账户进行增删改的操作，jsonp 则主要用来劫持数据。  </p>
+<p>Jsonp借此漏洞常见位置：<br>    web框架默认支持ajax + jsonp方式请求<br>    程序员主动开发需要支持jsonp的应用<br>Jsonp劫持防御：</p>
+<ol>
+<li>Referer检查</li>
+<li>Toke</li>
+</ol>
+<h2 id="反序列化漏洞"><a href="#反序列化漏洞" class="headerlink" title="反序列化漏洞"></a>反序列化漏洞</h2><p>几乎所有语言都有序列化功能，java，php，python都有相关漏洞<br>反序列化分类：<br>    反序列化触发执行任意代码 -》python<br>    (python的反序列化其实是一门真正的语言，是可以直接进行执行代码的)<br>    反序列化后，通过已有代码利用链，间接执行任意代码 -》 PHP/java</p>
+<p>PHP反序列化注意函数：<br>    serialize（序列化函数）<br>    unserialize（反序列化函数）<br>PHP反序列化特点：<br>    引入除资源型外任意类型变量<br>    无法引入函数 -》不能直接执行代码<br>    迂回战术<br>        寻找程序中可能存在的漏洞的类<br>        实例化类对象 -》 触发漏洞</p>
+<p>漏洞挖掘过程：<br>    寻找调用反序列化函数的位置<br>    寻找包含危险方法的类<br>    反序列化上下文是否包含该类<br>        包含：直接生成该类，触发漏洞<br>        不包含：寻找引用链<br>怎么利用链，怎么构造利用语句，还有phar反序列化等有很多后面再写<br>如果只是要找反序列化漏洞，那么找unserialize就够了</p>
+<h2 id="小技巧篇"><a href="#小技巧篇" class="headerlink" title="小技巧篇"></a>小技巧篇</h2><p>代码审计明白了原理，明白了各种漏洞的修复方式，之后想要提高就要仰仗自己积累的一些小技巧<br>因为你会发现遇到的大部分有漏洞的代码前面都存在一些过滤，检查；<br>如果你知道一些技巧后会发现很多过滤，检查都是可以绕过的</p>
+<h3 id="web开发框架下的PHP漏洞"><a href="#web开发框架下的PHP漏洞" class="headerlink" title="web开发框架下的PHP漏洞"></a>web开发框架下的PHP漏洞</h3><p>Laravel<br>symfony<br>slimphp<br>Yii2<br>特点：<br>    所需PHP版本较高，\0截断等老漏洞绝迹<br>    提供功能强大的ORM（即使想写出一个sql漏洞都难）<br>    提供自动处理输出的模板引擎（想写出前端漏洞都难了，因为自带一些转义，实体化功能）<br>    开发者可以通过composer找到任何需要的功能类，避免因为自己造轮子产生的漏洞<br>现代web开发框架安全思想<br>    Secure by default 原则<br>    文档中，会详细叙述可能出现的安全问题<br>挖掘思路<br>    寻找框架本身的安全漏洞<br>    寻找不规范的开发方式<br>    寻找错误的配置（debug模式，日志记录等）<br>    异常的利用（如果开启了debug或者会输出异常，可以构造异常抛出敏感信息，新的框架特有的漏洞老的几乎没有）<br>第三方服务利用<br>    spl_autoload的利用</p>
+<h3 id="压缩包问题"><a href="#压缩包问题" class="headerlink" title="压缩包问题"></a>压缩包问题</h3><p>web应用执行了解压缩操作<br>黑客利用压缩包的一些特性，构造"畸形"压缩包<br>解压缩时将造成漏洞 </p>
+<p>压缩炸弹惯用的方式<br>    绕过文件检查失败后的删除操作<br>    阻止压缩时的文件检查<br>    绕过压缩时的文件检查<br>    链接文件的利用<br>绕过文件检查失败后的删除操作：<br>    案例：上传压缩包后，后端处理只能删除文件无法删除目录，导致shell</p>
+<p>阻止压缩时的文件检查<br>    案例：压缩包解压失败，程序抛出错误并停止运行 -》 webshell保留<br>    压缩包三个文件，一个正常图片，一个webshell，第三个文件压缩存在错误<br>绕过压缩时的文件检查<br>    案例：使用../解压到上层目录，；构造一个文件名为：../../webshell.php，会让后端解压到上层目录<br>                而删除文件一般是在当前目录递归删除非法文件，不可能在根目录递归<br>链接文件的利用<br>    后端解压后未判断文件类型，导致可以上传软链接文件，该软连接导致任意文件读取<br>    压缩包是允许压缩软连接文件，也运行解压软连接文件；但文件上传传不了</p>
+<h3 id="条件竞争漏洞"><a href="#条件竞争漏洞" class="headerlink" title="条件竞争漏洞"></a>条件竞争漏洞</h3><p>条件竞争：web服务器都是多线程的，同时运行多人访问网站，理论是互相不影响的，但是php，Apache，Nginx只能保证php是不互相影响的，不能保证文件或者数据库链接是不互相影响的</p>
+<p>条件竞争漏洞挖掘方向：<br>    上传后删除的利用<br>    忘记上锁的数据库<br>    鸡肋文件包含的妙用<br>上传后删除的利用：<br>    上传压缩包后解压递归删除非法文件，但在这个过程中开启多个线程去访问解压出来的webshell，并在上层目录写入新的webshell；打一个时间差，在还没删除时利用，把webshell解压出来后面还有其他文件<br>发现一个文件上传的逻辑是在上传了后再删除，基本上就确定存在条件竞争漏洞</p>
+<h3 id="没上锁的数据库"><a href="#没上锁的数据库" class="headerlink" title="没上锁的数据库"></a>没上锁的数据库</h3><p>案例：商场漏洞：<br>    1.查询用户余额<br>    2.查询购买商品的价格<br>    3.判断用户余额>商品价格<br>    4.用户余额=用户余额 - 价格<br>        如果第三步和第四步是单独的步骤，如果用多个线程去请求同时走到了第三步，判断都可以购买<br>        购买完后同时走到第四步后同时减去价格，就会导致余额变负 -》成功购买多个商品</p>
+<h3 id="临时文件包含利用"><a href="#临时文件包含利用" class="headerlink" title="临时文件包含利用"></a>临时文件包含利用</h3><p>​	文件包含漏洞需要找到一个能够包含的恶意文件，但网站没有能够上传文件的地方，也没有找到任何可以控制的文件</p>
+<p>​	寻找临时文件泄露点，文件上传的时候，用户会发送一个数据包给服务器，服务器会将数据包里的文件保存到当前的临时目录下，变成	临时文件，文件名随机，内容可以控制，phpinfo可以获取文件名<br>​	我们可以上传一个非常大的文件，需要10秒上传完成，临时文件上传完成后是会被删除的，再开多个线程去包含该文件，生成一个新的webshell  </p>
+<h1 id="一些容易犯错的点"><a href="#一些容易犯错的点" class="headerlink" title="一些容易犯错的点"></a>一些容易犯错的点</h1><p>header('404') 会给用户返回一个页面，但并不会阻止php解释器继续往下运行</p>
+<p>正则：应该要写判断只有的，错误写成包含有，那么就有漏洞</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!preg_match(<span class="string">&#x27;/Ghost|Know/i&#x27;</span>, $cmd))&#123;</span><br><span class="line">	exit(<span class="string">&quot;错误&quot;</span>)；</span><br><span class="line">&#125;</span><br><span class="line">cmd = union select <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> <span class="comment"># Ghost</span></span><br><span class="line">cmd = ls / | ban</span><br></pre></td></tr></table></figure>
+
+<p>它会查询传入的语句其实有DESC就绕过了但和DESC一块的有我们的其他命令</p>
+<h1 id="尝试审计代码"><a href="#尝试审计代码" class="headerlink" title="尝试审计代码"></a>尝试审计代码</h1><p>admin 后台管理目录<br>install 网站的安装目录<br>api 接口文件目录<br>data 系统处理数据相关目录<br>include 用来包含的全局文件<br>template 模板<br>css CSS样式表目录<br>images 系统图片存放目录<br>system  管理目录<br>函数集文件: 这类文件通常命名中包含functions或者common等关键字，这些文件里面是一些公共的函数，提供给其他文件统一调用，所以大多数文件都会在文件头部包含到它们，寻找这些文件一个非常好用的技巧就是去打开index.php或者一些功能性文件，在头部一般都能找到。<br>配置文件：这类文件通常命名里面包括config这个关键字，配置文件包括Web程序运行必须的功能性配置选项以及数据库等配置信息，从这个文件里面可以了解程序的小部分功能，另外看这个文件的时候注意观察配置文件中参数值是用单引号还是用的双引号包起来，如果是双引号，则很大可能会存在代码执行漏洞。<br><a target="_blank" rel="noopener" href="https://github.com/source-trace/bluecms">https://github.com/source-trace/bluecms</a><br>根据流程填完信息后又空白了，但没问题已经安装好了，访问index.php页面就好<br>使用Seay工具自动扫描一下</p>
+<p><img src="https://s2.loli.net/2023/04/03/94y1nVUkLwF7pmd.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/94y1nVUkLwF7pmd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230403210856570"></p>
+<p>先看第一个试试<br><img src="https://s2.loli.net/2023/04/03/Qw1hc5Fu2IyqBv4.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/Qw1hc5Fu2IyqBv4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image.png"><br>可以看到先是包含了一个common.inc.php的文件，其次如果有ad_id参数那么会经过trim函数的处理<br>再sql语句拼接时是没有单引号包裹的，可能存在问题<br>去看看包含的php文件。粗略的观察一下发现有对于$_GET进行处理<br><img src="https://s2.loli.net/2023/04/03/tjCK2dJhwERaW3I.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/tjCK2dJhwERaW3I.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image.png"><br>if(!get_magic_quotes_gpc())，查看下函数意思:始终返回false<br>就是一直是true，都会经过这个if语句里的处理；if语句的处理追踪一下deep_addslashes看看<br><img src="https://s2.loli.net/2023/04/03/ymU7s3Ru2cPVtYd.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/ymU7s3Ru2cPVtYd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image.png"><br>就是经过了addslashes的处理，再前面学习过这个函数就是对于单引号双引号反斜线和nul进行转义，但我们sql语句并没有被''单引号包裹，这个过滤对于要审计的sql语句没有用；希望+1<br>看完包含的函数后在看一下trim函数有没有问题基本上就确定有没有sql注入了<br>么有定位到这个函数，查下官方手册发现是用来去除字符串首尾处的空白字符（或者其他字符）\t \n \r \0 \x0B<br>但只是去除首位的，语句中间的并不会，所以没影响；好理论确定存在注入了，实践开始<br>没有过滤扫描sql语句或者字母数字什么的，所以直接使用order查看下字段数<br><img src="https://s2.loli.net/2023/04/03/TdI9s5enRwVBZUW.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/TdI9s5enRwVBZUW.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image.png"><br>可以看到查到8时报错并有返回说明确实存在注入，使用联合注入试下<br>它是无回显的，可能要使用到时间盲注了，但在查看到网页源代码时<img src="https://s2.loli.net/2023/04/03/Keg1M2jCXirDZHh.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/Keg1M2jCXirDZHh.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image.png"><br>发现是有回显的，位数在7，在尝试查下表，嗯看来什么都可以查到<br><img src="https://s2.loli.net/2023/04/03/Gf8SAIuUBEnribL.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/03/Gf8SAIuUBEnribL.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image.png"><br>没有单引号，尝试下xss注入；也是存在的</p>
+
+  </div>
   
-  <div class='md article-desc' itemprop="articleBody">
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-03T14:21:12+01:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 3, 2023</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>PHP代码审计</p></a></div>
+  <span hidden itemprop="keywords">PHP代码审计</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        前言官方文档：php.netphp官方文档是非常详情，好用的，在遇到不清楚作用的函数时可以进行查询
-白盒测试做代码审计最主要的知识是要去了解一个漏洞应该有哪些防御方式，因为大部分的漏洞都是因为修复没有做的全面，或者修复没有考虑到一些情况导致漏洞。MVC：C：分发处理请求网站的逻辑M：处理和数据库相关的操作V：显示给用户的内容
-代码审计流程正向查找流程a. 从入口点函数出发（如index.ph...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=PHP代码审计 - GhostToKnow&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=PHP代码审计 - GhostToKnow&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=PHP代码审计 - GhostToKnow&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T13:25:51+01:00">2023-04-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/PHP/">PHP</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/PHP/" itemprop="url"><span itemprop="name">PHP</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/Joomla-未授权访问漏洞POC-CVE-2023-23752/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/04/02/Joomla-%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9EPOC-CVE-2023-23752/">
-        <img itemprop="image" class='headimg' alt="Joomla 未授权访问漏洞POC CVE-2023-23752" src='https://s2.loli.net/2023/04/02/57UPwhuWxyoOVHJ.jpg'/>
-      </a>
     </div>
-  
-  
+    <!-- Custom Files bottomMeta begin -->
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/Joomla-%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9EPOC-CVE-2023-23752/"  itemprop="url">
-        Joomla 未授权访问漏洞POC CVE-2023-23752
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言Joomla是一套全球知名的内容管理系统（CMS），其使用PHP语言加上MySQL数据库所开发，可以在Linux、Windows、MacOSX等各种不同的平台上运行。
-2月16日，Joomla官方发布安全公告，修复了Joomla! CMS中的一个未授权访问漏洞（CVE-2023-23752），目前该漏洞的细节及PoC&#x2F;EXP已公开。
-Joomla! CMS 版本4.0.0 - ...
-      
-    
+    <!-- Custom Files bottomMeta end -->
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:03:46+01:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/POC/">POC</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/POC/" itemprop="url"><span itemprop="name">POC</span></a>
-            </span>
-          
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2023/04/02/Joomla-%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9EPOC-CVE-2023-23752/' itemprop="url">
-            Read More
-          </a>
-        </div>
+        <a class='prev' href='/2023/04/03/volatility%E5%8F%96%E8%AF%81/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>volatility取证</p>
+          <p class='content'>前言volatility是一款开源的内存取证分析工具，由python编写，支持各种操作系统，能够对导出的windows,linux,mac osx,android等系统内存镜像进行分析。可以通过...</p>
+        </a>
+      
+      
+        <a class='next' href='/2023/04/02/Joomla-%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9EPOC-CVE-2023-23752/'>
+          <p class='title'>Joomla 未授权访问漏洞POC CVE-2023-23752<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言Joomla是一套全球知名的内容管理系统（CMS），其使用PHP语言加上MySQL数据库所开发，可以在Linux、Windows、MacOSX等各种不同的平台上运行。
+2月16日，Jooml...</p>
+        </a>
       
     </div>
   
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/Tomcat-幽灵猫任意文件读取漏洞复现-CVE-2020-1938/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/04/02/Tomcat-%E5%B9%BD%E7%81%B5%E7%8C%AB%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2020-1938/">
-        <img itemprop="image" class='headimg' alt="Tomcat 幽灵猫任意文件读取漏洞复现 CVE-2020-1938" src='https://s2.loli.net/2023/04/02/3BiSjKozVpEsTyC.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/Tomcat-%E5%B9%BD%E7%81%B5%E7%8C%AB%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2020-1938/"  itemprop="url">
-        Tomcat 幽灵猫任意文件读取漏洞复现 CVE-2020-1938
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Tomcat 任意文件读取漏洞复现 CVE-2020-1938漏洞介绍1231. Java是目前Web开发中最主流的编程语言，而 Tomcat 是当前最流行的 Java 中间件服务器之一，从初版发布到现在已经有二十多年历史，在世界范围内广泛使用。2. CVE-2020-1938是由长亭科技安全研究员发现的存在于 Tomcat 中的安全漏洞，由于 Tomcat AJP 协议设计上存在缺陷，攻击...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T13:53:03+01:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/Tomcat-%E5%B9%BD%E7%81%B5%E7%8C%AB%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2020-1938/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
   
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/CouchDB-垂直权限绕过任意命令执行漏洞复现-CVE-2017-12635-6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/04/02/CouchDB-%E5%9E%82%E7%9B%B4%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2017-12635-6/">
-        <img itemprop="image" class='headimg' alt="CouchDB 垂直权限绕过任意命令执行漏洞复现 CVE-2017-12635/6" src='https://s2.loli.net/2023/04/02/toZf8BdsjvryTFG.png'/>
-      </a>
-    </div>
-  
-  
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/CouchDB-%E5%9E%82%E7%9B%B4%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2017-12635-6/"  itemprop="url">
-        CouchDB 垂直权限绕过任意命令执行漏洞复现 CVE-2017-12635/6
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言CouchDB 是一个开源的面向文档的数据库管理系统，可以通过 RESTful JavaScript Object Notation  (JSON) API  访问。CVE-2017-12635是由于Erlang和JavaScript对JSON解析方式的不同，导致语句执行产生差异性导致的。这个漏洞可以让任意用户创建管理员，属于垂直权限绕过漏洞。
-CVE-2017-12636是一个任意命令...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T13:34:42+01:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/CouchDB-%E5%9E%82%E7%9B%B4%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2017-12635-6/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/Weblogic-CVE-2020-2551/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/04/02/Weblogic-CVE-2020-2551/">
-        <img itemprop="image" class='headimg' alt="Weblogic CVE-2020-2551" src='https://s2.loli.net/2023/04/02/AyJ9BWaz4YsTxQd.jpg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/04/02/Weblogic-CVE-2020-2551/"  itemprop="url">
-        Weblogic CVE-2020-2551
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言2020年1月15日,Oracle发布了一系列的安全补丁,其中Oracle WebLogic Server产品有高危漏洞,漏洞编号CVE-2020-2551,CVSS评分9.8分,漏洞利用难度低,可基于IIOP协议执行远程代码。
-经过分析这次漏洞主要原因是错误的过滤JtaTransactionManager类，JtaTransactionManager父类AbstractPlatform...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T13:10:38+01:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/04/02/Weblogic-CVE-2020-2551/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/29/Struts2-S2-061-远程命令执行漏洞（CVE-2020-17530）复现/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/">
-        <img itemprop="image" class='headimg' alt="Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现" src='https://s3.bmp.ovh/imgs/2023/03/29/43e8bf8d987eb0f2.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/"  itemprop="url">
-        Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言Apache Struts2框架是一个用于开发Java EE网络应用程序的Web框架。Apache Struts于2020年12月08日披露 S2-061 Struts 远程代码执行漏洞(CVE-2020-17530)，在使用某些tag等情况下可能存在OGNL表达式注入漏洞，从而造成远程代码执行，风险极大，S2-061是对S2-059漏洞修复后的绕过。
-影响版本：
-Apache Stru...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-29T14:21:36+01:00">2023-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/29/Shiro-身份认证绕过漏洞-CVE-2022-32532/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/03/29/Shiro-%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E-CVE-2022-32532/">
-        <img itemprop="image" class='headimg' alt="Shiro 身份认证绕过漏洞 CVE-2022-32532" src='https://s3.bmp.ovh/imgs/2023/03/29/2e6cbe0fb2de9f80.jpeg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/29/Shiro-%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E-CVE-2022-32532/"  itemprop="url">
-        Shiro 身份认证绕过漏洞 CVE-2022-32532
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言123Apache Shiro 是一个强大且易用的 Java 安全框架，通过它可以执行身份验证、授权、密码和会话管理。使用 Shiro 的易用 API，您可以快速、轻松地保护任何应用程序 —— 从最小的移动应用程序到最大的 WEB 和企业应用程序。2022年6月29日，Apache官方披露Apache Shiro权限绕过漏洞(CVE-2022-32532)，当Apache Shiro中使...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-29T14:16:44+01:00">2023-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/29/Shiro-%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E-CVE-2022-32532/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/29/CNVD-2022-10270-03672-向日葵RCE复现/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/03/29/CNVD-2022-10270-03672-%E5%90%91%E6%97%A5%E8%91%B5RCE%E5%A4%8D%E7%8E%B0/">
-        <img itemprop="image" class='headimg' alt="CNVD-2022-10270/03672 向日葵RCE复现" src='https://s3.bmp.ovh/imgs/2023/03/29/cdce78fdc944b86b.jpeg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/29/CNVD-2022-10270-03672-%E5%90%91%E6%97%A5%E8%91%B5RCE%E5%A4%8D%E7%8E%B0/"  itemprop="url">
-        CNVD-2022-10270/03672 向日葵RCE复现
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言向日葵是一款免费的集远程控制电脑手机、远程桌面连接、远程开机、远程管理、支持内网穿透的一体化远程控制管理工具软件。
-于2022年2月5日和2022年2月15日，CNVD公开上海贝锐信息科技股份有限公司的向日葵远控软件存在远程代码执行漏洞（CNVD-2022-10270&#x2F;CNVD-2022-03672），影响Windows系统使用的个人版和简约版，攻击者可利用该漏洞获取服务器控制...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-29T14:05:36+01:00">2023-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/29/CNVD-2022-10270-03672-%E5%90%91%E6%97%A5%E8%91%B5RCE%E5%A4%8D%E7%8E%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/24/常见sql注入手法总结与技巧-一/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/">
-        <img itemprop="image" class='headimg' alt="常见sql注入手法总结与技巧(一)" src='https://s3.bmp.ovh/imgs/2023/03/24/6684ceec581ed885.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/"  itemprop="url">
-        常见sql注入手法总结与技巧(一)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。
-sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据库进行相应的动作（如增删改查甚至写后门）。
-根本产生原因：后端服务器接收传来的参...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-24T11:48:48+00:00">2023-03-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/SQL%E6%B3%A8%E5%85%A5/" itemprop="url"><span itemprop="name">SQL注入</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
 </div>
@@ -3125,221 +2780,56 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://s3.bmp.ovh/imgs/2023/03/21/f5bad3bbda1b1afd.jpeg#你的头像'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>GhostToKnow</h2>
-        
-        
-          <p>不谋全局者,不足以谋一域</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:guixiaode2001@163.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/GhostToKnow"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/PHP/" href="/categories/PHP/"
-            active-action="action-categoriesPHP"
-            ><div class='name'>PHP</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/POC/" href="/categories/POC/"
-            active-action="action-categoriesPOC"
-            ><div class='name'>POC</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/SQL%E6%B3%A8%E5%85%A5/" href="/categories/SQL%E6%B3%A8%E5%85%A5/"
-            active-action="action-categoriesSQLE6B3A8E585A5"
-            ><div class='name'>SQL注入</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8F%96%E8%AF%81/" href="/categories/%E5%8F%96%E8%AF%81/"
-            active-action="action-categoriesE58F96E8AF81"
-            ><div class='name'>取证</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"
-            active-action="action-categoriesE6BC8FE6B49EE5A48DE78EB0"
-            ><div class='name'>漏洞复现</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/CouchDB/" style="font-size: 14px; color: #999">CouchDB</a> <a href="/tags/Joomla/" style="font-size: 14px; color: #999">Joomla</a> <a href="/tags/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="font-size: 14px; color: #999">PHP代码审计</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5-%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">SQL注入,安全基础</a> <a href="/tags/Shiro/" style="font-size: 14px; color: #999">Shiro</a> <a href="/tags/Struts2/" style="font-size: 14px; color: #999">Struts2</a> <a href="/tags/Tomcat/" style="font-size: 14px; color: #999">Tomcat</a> <a href="/tags/Weblogic/" style="font-size: 14px; color: #999">Weblogic</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%90%91%E6%97%A5%E8%91%B5/" style="font-size: 14px; color: #999">向日葵</a>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>10 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-04-03 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-<section class="widget desktop mobile pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/04/03/volatility%E5%8F%96%E8%AF%81/"><div class="item"><time>2023-04-03</time><span>取证</span></div><span>volatility取证</span></a></li><li><a class="widget-last" href="/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><div class="item"><time>2023-04-03</time><span>PHP</span></div><span>PHP代码审计</span></a></li><li><a class="widget-last" href="/2023/04/02/Weblogic-CVE-2020-2551/"><div class="item"><time>2023-04-02</time><span>漏洞复现</span></div><span>Weblogic CVE-2020-2551</span></a></li><li><a class="widget-last" href="/2023/04/02/Joomla-%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9EPOC-CVE-2023-23752/"><div class="item"><time>2023-04-02</time><span>POC</span></div><span>Joomla 未授权访问漏洞POC CVE-2023-23752</span></a></li><li><a class="widget-last" href="/2023/04/02/Tomcat-%E5%B9%BD%E7%81%B5%E7%8C%AB%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2020-1938/"><div class="item"><time>2023-04-02</time><span>漏洞复现</span></div><span>Tomcat 幽灵猫任意文件读取漏洞复现 CVE-2020-1938</span></a></li></ul>
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="toc-text">代码审计流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E6%9F%A5%E6%89%BE%E6%B5%81%E7%A8%8B"><span class="toc-text">正向查找流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E6%9F%A5%E6%89%BE%E6%B5%81%E7%A8%8B"><span class="toc-text">反向查找流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E6%9F%A5%E6%89%BE%E6%B5%81%E7%A8%8B%EF%BC%88%E6%89%8B%E5%8A%A8%E5%AE%A1%E8%AE%A1%E4%B8%BB%E8%A6%81%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="toc-text">双向查找流程（手动审计主要方式）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98%E6%8A%80%E5%B7%A7"><span class="toc-text">SQL注入漏洞挖掘技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E6%B3%A8%E5%85%A5%E5%B8%B8%E8%A7%81%E8%BF%87%E6%BB%A4%E6%96%B9%E6%B3%95"><span class="toc-text">sql注入常见过滤方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%B3%A8%E5%85%A5%E8%BF%87%E6%BB%A4%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="toc-text">常见注入过滤绕过方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E5%AE%B9%E6%98%93%E9%81%97%E6%BC%8F%E5%BE%97%E8%BE%93%E5%85%A5%E7%82%B9"><span class="toc-text">开发者容易遗漏得输入点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">任意文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E"><span class="toc-text">文件上传漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E"><span class="toc-text">文件包含漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4%E6%BC%8F%E6%B4%9E"><span class="toc-text">文件删除漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B-1"><span class="toc-text">案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-text">命令执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XML%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E"><span class="toc-text">XML实体注入漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%BC%8F%E6%B4%9E"><span class="toc-text">前端漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xss"><span class="toc-text">xss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF"><span class="toc-text">CSRF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jsonp%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E"><span class="toc-text">Jsonp劫持漏洞</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3374,7 +2864,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3389,9 +2879,9 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
+      cover_wrapper.id="half";
       cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -3907,7 +3397,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"GhostToKnow"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"GhostToKnow","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"GhostToKnow","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"GhostToKnow"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/PHP/","name":"PHP"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/03/PHP代码审计/","name":"PHP代码审计"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"GhostToKnow","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PHP代码审计","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"},"author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"GhostToKnow","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/","wordCount":0,"datePublished":"2023-04-03T12:25:51.000Z","dateModified":"2023-04-03T13:21:12.906Z","articleSection":"PHP","keywords":"PHP代码审计","image":{"@type":"ImageObject","url":"https://s2.loli.net/2023/04/03/KgnRqY23MB1V8ZN.jpg","width":1024,"height":768}}]</script>
 
 
 
