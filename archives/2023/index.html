@@ -1622,7 +1622,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1680529583796),
+    lastupdate: new Date(1680675234804),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["toc"],
@@ -2369,6 +2369,164 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/java安全-反序列化-二/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="GhostToKnow">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="GhostToKnow">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%BA%8C/">
+        <img itemprop="image" class='headimg' alt="java安全 反序列化(二)" src='https://s2.loli.net/2023/04/05/mZ9arBIUxnD2wCX.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%BA%8C/"  itemprop="url">
+        java安全 反序列化(二)
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        [200~# java安全 反序列化(二)
+寻找反序列化链(Gadget)
+
+在项目里找漏洞
+readObject里的漏洞一般比较少
+
+寻找项目的依赖库类中的Gadget
+一些依赖也会有反序列化的操作，如果jar包中的某些类在进行反序列化时有可控的点，就可以利用jar包中存在的漏洞来构造调用链
+
+
+ysoserial工具ysoserial工具可以帮助我们在依赖库里面找到利用链。
+1git ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
+            <meta itemprop="name" content="GhostToKnow">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-05T06:57:25+01:00">2023-04-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/java%E5%AE%89%E5%85%A8/">java安全</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/java%E5%AE%89%E5%85%A8/" itemprop="url"><span itemprop="name">java安全</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%BA%8C/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/java安全-反序列化-一/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="GhostToKnow">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="GhostToKnow">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/">
+        <img itemprop="image" class='headimg' alt="java安全 反序列化(一)" src='https://s2.loli.net/2023/04/05/mZ9arBIUxnD2wCX.jpg'/>
+      </a>
+    </div>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/"  itemprop="url">
+        java安全 反序列化(一)
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        前言序列化就是把对象转换成字节流，便于保存在内存、文件、数据库中;反序列化即逆过程，由字节流还原成对象。序列化是一种对象持久化的手段，可以将对象的状态转换为字节数组，来便于存储或者传输的机制;可以有效地实现多平台之间的通信、对象持久化存储。
+Java中的ObjectOutputStream类的writeObject()方法可以实现序列化，类ObjectlnputStream类的readObj...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
+            <meta itemprop="name" content="GhostToKnow">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-05T06:39:07+01:00">2023-04-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/java%E5%AE%89%E5%85%A8/">java安全</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/java%E5%AE%89%E5%85%A8/" itemprop="url"><span itemprop="name">java安全</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/volatility取证/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="GhostToKnow">
@@ -2961,158 +3119,24 @@ Apache Stru...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/29/CNVD-2022-10270-03672-向日葵RCE复现/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/03/29/CNVD-2022-10270-03672-%E5%90%91%E6%97%A5%E8%91%B5RCE%E5%A4%8D%E7%8E%B0/">
-        <img itemprop="image" class='headimg' alt="CNVD-2022-10270/03672 向日葵RCE复现" src='https://s3.bmp.ovh/imgs/2023/03/29/cdce78fdc944b86b.jpeg'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/29/CNVD-2022-10270-03672-%E5%90%91%E6%97%A5%E8%91%B5RCE%E5%A4%8D%E7%8E%B0/"  itemprop="url">
-        CNVD-2022-10270/03672 向日葵RCE复现
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言向日葵是一款免费的集远程控制电脑手机、远程桌面连接、远程开机、远程管理、支持内网穿透的一体化远程控制管理工具软件。
-于2022年2月5日和2022年2月15日，CNVD公开上海贝锐信息科技股份有限公司的向日葵远控软件存在远程代码执行漏洞（CNVD-2022-10270&#x2F;CNVD-2022-03672），影响Windows系统使用的个人版和简约版，攻击者可利用该漏洞获取服务器控制...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-29T14:05:36+01:00">2023-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/29/CNVD-2022-10270-03672-%E5%90%91%E6%97%A5%E8%91%B5RCE%E5%A4%8D%E7%8E%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/24/常见sql注入手法总结与技巧-一/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GhostToKnow">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="GhostToKnow">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/">
-        <img itemprop="image" class='headimg' alt="常见sql注入手法总结与技巧(一)" src='https://s3.bmp.ovh/imgs/2023/03/24/6684ceec581ed885.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/"  itemprop="url">
-        常见sql注入手法总结与技巧(一)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言SQL 是 Structured Query Language 的缩写，中文译为“结构化查询语言”。SQL 是一种计算机语言，用来存储、检索和修改关系型数据库中存储的数据。
-sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在开发时没有对用户的输入行为进行判断和过滤，使得用户输入了恶意语句后传给了后端数据库进行相应的动作（如增删改查甚至写后门）。
-根本产生原因：后端服务器接收传来的参...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2023/03/22/377c1b1edae4e063.png">
-            <meta itemprop="name" content="GhostToKnow">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-24T11:48:48+00:00">2023-03-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/SQL%E6%B3%A8%E5%85%A5/" itemprop="url"><span itemprop="name">SQL注入</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/03/24/%E5%B8%B8%E8%A7%81sql%E6%B3%A8%E5%85%A5%E6%89%8B%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8E%E6%8A%80%E5%B7%A7-%E4%B8%80/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+        <p class="current">
+          1 / 2
+        </p>
+        
+          <a class="next" rel="next" href="/archives/2023/page/2/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;Next&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        
+      </div>
     
   
 
@@ -3209,6 +3233,11 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
             ><div class='name'>SQL注入</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/java%E5%AE%89%E5%85%A8/" href="/categories/java%E5%AE%89%E5%85%A8/"
+            active-action="action-categoriesjavaE5AE89E585A8"
+            ><div class='name'>java安全</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E5%8F%96%E8%AF%81/" href="/categories/%E5%8F%96%E8%AF%81/"
             active-action="action-categoriesE58F96E8AF81"
             ><div class='name'>取证</div><div class='badge'>(1)</div></a></li>
@@ -3241,7 +3270,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
 
 
     <div class='content'>
-      <a href="/tags/CouchDB/" style="font-size: 14px; color: #999">CouchDB</a> <a href="/tags/Joomla/" style="font-size: 14px; color: #999">Joomla</a> <a href="/tags/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="font-size: 14px; color: #999">PHP代码审计</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5-%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">SQL注入,安全基础</a> <a href="/tags/Shiro/" style="font-size: 14px; color: #999">Shiro</a> <a href="/tags/Struts2/" style="font-size: 14px; color: #999">Struts2</a> <a href="/tags/Tomcat/" style="font-size: 14px; color: #999">Tomcat</a> <a href="/tags/Weblogic/" style="font-size: 14px; color: #999">Weblogic</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%90%91%E6%97%A5%E8%91%B5/" style="font-size: 14px; color: #999">向日葵</a>
+      <a href="/tags/CouchDB/" style="font-size: 14px; color: #999">CouchDB</a> <a href="/tags/Joomla/" style="font-size: 14px; color: #999">Joomla</a> <a href="/tags/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="font-size: 14px; color: #999">PHP代码审计</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5-%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">SQL注入,安全基础</a> <a href="/tags/Shiro/" style="font-size: 14px; color: #999">Shiro</a> <a href="/tags/Struts2/" style="font-size: 14px; color: #999">Struts2</a> <a href="/tags/Tomcat/" style="font-size: 14px; color: #999">Tomcat</a> <a href="/tags/Weblogic/" style="font-size: 14px; color: #999">Weblogic</a> <a href="/tags/volatility/" style="font-size: 14px; color: #999">volatility</a> <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 24px; color: #555">反序列化</a> <a href="/tags/%E5%90%91%E6%97%A5%E8%91%B5/" style="font-size: 14px; color: #999">向日葵</a>
     </div>
   </section>
 
@@ -3267,7 +3296,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>10 篇</div>
+          <div>12 篇</div>
         </div>
       
 
@@ -3302,7 +3331,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2023-04-03 日</div>
+          <div id="last-update-show">2023-04-05 日</div>
         </div>
       
     </div>
@@ -3327,7 +3356,7 @@ sql注入是最为常见也是破坏力很大的漏洞，它是因为开发在�
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/04/03/volatility%E5%8F%96%E8%AF%81/"><div class="item"><time>2023-04-03</time><span>取证</span></div><span>volatility取证</span></a></li><li><a class="widget-last" href="/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><div class="item"><time>2023-04-03</time><span>PHP</span></div><span>PHP代码审计</span></a></li><li><a class="widget-last" href="/2023/04/02/Weblogic-CVE-2020-2551/"><div class="item"><time>2023-04-02</time><span>漏洞复现</span></div><span>Weblogic CVE-2020-2551</span></a></li><li><a class="widget-last" href="/2023/04/02/Joomla-%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9EPOC-CVE-2023-23752/"><div class="item"><time>2023-04-02</time><span>POC</span></div><span>Joomla 未授权访问漏洞POC CVE-2023-23752</span></a></li><li><a class="widget-last" href="/2023/04/02/Tomcat-%E5%B9%BD%E7%81%B5%E7%8C%AB%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-CVE-2020-1938/"><div class="item"><time>2023-04-02</time><span>漏洞复现</span></div><span>Tomcat 幽灵猫任意文件读取漏洞复现 CVE-2020-1938</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%BA%8C/"><div class="item"><time>2023-04-05</time><span>java安全</span></div><span>java安全 反序列化(二)</span></a></li><li><a class="widget-last" href="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/"><div class="item"><time>2023-04-05</time><span>java安全</span></div><span>java安全 反序列化(一)</span></a></li><li><a class="widget-last" href="/2023/04/03/volatility%E5%8F%96%E8%AF%81/"><div class="item"><time>2023-04-03</time><span>取证</span></div><span>volatility取证</span></a></li><li><a class="widget-last" href="/2023/04/03/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><div class="item"><time>2023-04-03</time><span>PHP</span></div><span>PHP代码审计</span></a></li><li><a class="widget-last" href="/2023/04/02/Weblogic-CVE-2020-2551/"><div class="item"><time>2023-04-02</time><span>漏洞复现</span></div><span>Weblogic CVE-2020-2551</span></a></li></ul>
   </div>
 </section>
 

